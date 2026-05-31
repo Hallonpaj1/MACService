@@ -151,7 +151,7 @@ export default function Contact() {
         <h2>Redo att börja?</h2>
         <p>Kontakta oss idag</p>
 
-        <a href="tel:+46732275540">
+        <a href="tel:+46732275540" aria-label="Ring 073 227 55 40">
           Ring oss
         </a>
 
