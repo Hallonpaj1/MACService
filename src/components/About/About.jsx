@@ -5,10 +5,10 @@ import Slideshow from "../Slideshow/Slideshow"
 export default function AboutSection() {
 
   const items = [
-    "Personlig service",
+    "Professionell och erfaren service",
+    "Personlig och tillgänglig",
     "Noggrant utfört arbete",
-    "Rimliga priser",
-    "Flexibilitet blev helt plöstligt jättestor",
+    "Service till rätt pris",
   ]
 
   return (
