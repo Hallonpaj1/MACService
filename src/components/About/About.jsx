@@ -1,13 +1,14 @@
 import { motion } from "framer-motion"
 import "./About.css"
+import Slideshow from "../Slideshow/Slideshow"
 
 export default function AboutSection() {
 
   const items = [
-    "Professionell och erfaren service",
-    "Personlig och tillgänglig",
+    "Personlig service",
     "Noggrant utfört arbete",
-    "Priser till rätt pris",
+    "Rimliga priser",
+    "Flexibilitet blev helt plöstligt jättestor",
   ]
 
   return (
@@ -30,7 +31,7 @@ export default function AboutSection() {
             </h2>
 
             <p className="about-text">
-              Välkommen till A.C Service – din lokala partner för
+              Välkommen till MAC Service – din lokala partner för
               trädgårdsservice, fastighetsskötsel och byggtjänster i mellersta Sverige.
             </p>
 
@@ -64,16 +65,9 @@ export default function AboutSection() {
           >
             <div className="about-visual">
 
-              <div className="about-center">
-                <div>
-                  <div className="about-number">10+</div>
-                  <div className="about-subtext">
-                    År av Erfaren Service
-                  </div>
-                </div>
-              </div>
+              <div className="about-center"></div>
 
-              <div className="about-grid-overlay" />
+              <Slideshow />
 
             </div>
           </motion.div>

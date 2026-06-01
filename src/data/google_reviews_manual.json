@@ -1,0 +1,38 @@
+{
+  "fetched_at": "2026-06-01T00:00:00Z",
+  "source": "manual_import",
+  "reviews": [
+    {
+      "author": "Mats Olsson",
+      "rating": 5,
+      "relative_time_description": "för 10 månader sedan",
+      "text": "Snyggt utfört.",
+      "source_url": "https://www.google.com/search?q=MAC+Service+Recensioner",
+      "note": "Recension från Google (användardata klistrad manuellt)"
+    },
+    {
+      "author": "Robert Kling",
+      "rating": 5,
+      "relative_time_description": "för 5 dagar sedan",
+      "text": "",
+      "source_url": "https://www.google.com/search?q=MAC+Service+Recensioner",
+      "note": "Ingen text angiven."
+    },
+    {
+      "author": "Gunbritt Göransson",
+      "rating": 5,
+      "relative_time_description": "för 5 månader sedan",
+      "text": "",
+      "source_url": "https://www.google.com/search?q=MAC+Service+Recensioner",
+      "note": "Ingen text angiven."
+    },
+    {
+      "author": "Rickard Boman",
+      "rating": 5,
+      "relative_time_description": "för 7 månader sedan",
+      "text": "",
+      "source_url": "https://www.google.com/search?q=MAC+Service+Recensioner",
+      "note": "Ingen text angiven."
+    }
+  ]
+}

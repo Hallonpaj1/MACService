@@ -2,6 +2,7 @@ import Hero from "../../components/Hero/Hero";
 import Services from "../../components/Services/Services";
 import About from "../../components/About/About";
 import CTA from "../../components/CTA/CTA";
+import GoogleReviews from "../../components/Reviews/GoogleReviews";
 import "./Home.css";
 
 export default function Home() {
@@ -9,8 +10,10 @@ export default function Home() {
     <main className="home">
 
       <section className="section hero">
-        <Hero />
+        <Hero showStats={false} />
       </section>
+
+      <GoogleReviews />
 
       <section className="section services">
         <Services />

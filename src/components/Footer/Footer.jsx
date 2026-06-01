@@ -10,12 +10,12 @@ export default function Footer() {
   const contactLinks = [
     { icon: Phone, label: "Telefon", value: "073 227 55 40", href: "tel:+46732275540" },
     { icon: Mail, label: "Email", value: "hello@macservice.se", href: "mailto:hello@macservice.se" },
-    { icon: MapPin, label: "Plats", value: "Köping, Sverige", href: "#" },
+    { icon: MapPin, label: "Plats", value: "Köping, Sverige", href: "#/contact#map" },
   ]
 
   const footerLinks = [
     { title: "Tjänster", links: ["Trädgårdsservice", "Byggnationer", "Fastighetsskötsel"] },
-    { title: "Företag", links: ["Om Oss", "Kontakt", "Integritet"] },
+    { title: "Företag", links: ["Om Oss", "Kontakt"] },
     { title: "Socialt", links: ["Instagram", "Facebook", "LinkedIn"] },
   ]
 
@@ -34,8 +34,8 @@ export default function Footer() {
             transition={{ duration: 0.6 }}
           >
             <div className="footer-logo">
-              <img src={logo} alt="A.C Service" />
-              <span className="footer-name">A.C Service</span>
+              <img src={logo} alt="MAC Service" />
+              <span className="footer-name">MAC Service</span>
             </div>
 
             <p className="footer-text">
@@ -68,11 +68,20 @@ export default function Footer() {
               <h4 className="footer-title">{col.title}</h4>
 
               <ul className="footer-links">
-                {col.links.map((link, j) => (
-                  <li key={j}>
-                    <a href="#">{link}</a>
-                  </li>
-                ))}
+                {col.links.map((link, j) => {
+                  let href = "#"
+                  if (link === "Instagram") href = "https://www.instagram.com/macservicekoping?igsh=Zjd4dHMyOXNuZnd1"
+                  else if (link === "Facebook") href = "https://www.facebook.com/mac.service.2025"
+                  else if (link === "LinkedIn") href = "https://se.linkedin.com/in/andreas-collin-429089349"
+                  else if (link === "Kontakt") href = "#/contact"
+                  else if (link === "Om Oss") href = "#/about"
+
+                  return (
+                    <li key={j}>
+                      <a href={href} target={href !== "#" ? "_blank" : undefined} rel={href !== "#" ? "noreferrer" : undefined}>{link}</a>
+                    </li>
+                  )
+                })}
               </ul>
             </motion.div>
           ))}
@@ -88,7 +97,7 @@ export default function Footer() {
           whileInView={{ opacity: 1 }}
           className="footer-bottom"
         >
-          © {currentYear} A.C Service. Alla rättigheter reserverade.
+          © {currentYear} MAC Service. Alla rättigheter reserverade.
         </motion.div>
 
       </div>

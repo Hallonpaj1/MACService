@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import { Mail, Phone, MapPin, Send } from "lucide-react"
 import "./Contact.css"
@@ -8,6 +8,17 @@ export default function Contact() {
   const [formData, setFormData] = useState({})
   const [submitted, setSubmitted] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
+
+  useEffect(() => {
+    try {
+      if (typeof window !== "undefined" && window.location.hash.includes("map")) {
+        const el = document.getElementById("contact-map")
+        if (el) setTimeout(() => el.scrollIntoView({ behavior: "smooth" }), 150)
+      }
+    } catch (e) {
+      // ignore
+    }
+  }, [])
 
   const contactMethods = [
     {
@@ -28,7 +39,7 @@ export default function Contact() {
       icon: MapPin,
       title: "Plats",
       content: "Köping, Sverige",
-      link: "#",
+      link: "#/contact#map",
       color: "#e11d48",
     },
   ]
@@ -132,7 +143,7 @@ export default function Contact() {
       <section className="section contact-map-section">
         <div className="container">
 
-          <div className="map">
+          <div id="contact-map" className="map">
             <iframe
               title="map"
               width="100%"

@@ -12,7 +12,7 @@ export default function NotFound() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.4 }}
           src={logo}
-          alt="A.C Service Logo"
+          alt="MAC Service Logo"
           className="error-logo"
         />
 

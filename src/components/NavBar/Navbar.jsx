@@ -35,8 +35,8 @@ export default function Navbar() {
 
         {/* LOGO */}
         <Link to="/" className="navbar-logo">
-          <img src={logo} alt="A.C Service" />
-          <span className="navbar-brand">A.C Service</span>
+          <img src={logo} alt="MAC Service" />
+          <span className="navbar-brand">MAC Service</span>
         </Link>
 
         {/* DESKTOP LINKS */}

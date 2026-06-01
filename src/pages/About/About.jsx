@@ -39,7 +39,7 @@ export default function AboutPage() {
           animate={{ opacity: 1, y: 0 }}
           className="h1"
         >
-          Om A.C Service
+          Om MAC Service
         </motion.h1>
 
         <motion.p
@@ -57,7 +57,7 @@ export default function AboutPage() {
         <div className="welcome-container">
 
           <p className="text-lg">
-            Välkommen till A.C Service – trädgård, fastighet och bygg i mellersta Sverige.
+            Välkommen till MAC Service – trädgård, fastighet och bygg i mellersta Sverige.
           </p>
 
           <p className="text-lg">
@@ -79,7 +79,7 @@ export default function AboutPage() {
                 "Flexibilitet",
               ].map((item, i) => (
                 <div key={i} className="check-item">
-                  <CheckCircle2 size={20} />
+                  <CheckCircle2 size={14} />
                   <span>{item}</span>
                 </div>
               ))}
@@ -118,32 +118,6 @@ export default function AboutPage() {
                 </motion.div>
               )
             })}
-
-          </div>
-
-        </div>
-      </section>
-
-      {/* STATS */}
-      <section className="section stats-section">
-        <div className="container">
-
-          <div className="stats-grid">
-
-            <div>
-              <div className="stat-number">100+</div>
-              <div className="stat-label">Nöjda kunder</div>
-            </div>
-
-            <div>
-              <div className="stat-number">100+</div>
-              <div className="stat-label">Projekt</div>
-            </div>
-
-            <div>
-              <div className="stat-number">10+</div>
-              <div className="stat-label">År erfarenhet</div>
-            </div>
 
           </div>
 

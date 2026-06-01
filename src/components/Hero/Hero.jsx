@@ -5,7 +5,7 @@ import logo from "../../assets/logo/LogoTransparent.png"
 import "./Hero.css"
 
 
-export default function Hero() {
+export default function Hero({ showStats = true }) {
 
   const navigate = useNavigate()
 
@@ -24,7 +24,7 @@ export default function Hero() {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8 }}
         src={logo}
-        alt="A.C Service Logo"
+        alt="MAC Service Logo"
         className="hero-logo"
       />
 
@@ -35,7 +35,7 @@ export default function Hero() {
           transition={{ duration: 0.8 }}
           className="hero-label"
         >
-          Välkommen till A.C Service – trädgård, fastighetsskötsel och bygg i mellersta Sverige.
+          Välkommen till MAC Service – trädgård, fastighetsskötsel och bygg i mellersta Sverige.
         </motion.div>
 
         {/* TITLE */}
@@ -74,31 +74,24 @@ export default function Hero() {
 
         </div>
 
-        {/* STATS */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="hero-stats"
-        >
-          {stats.map((s, i) => (
-            <div key={i}>
-              <div className="stat-number">{s.label}</div>
-              <div className="stat-label">{s.value}</div>
-            </div>
-          ))}
-        </motion.div>
+        {/* STATS (optional) */}
+        {showStats && (
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="hero-stats"
+          >
+            {stats.map((s, i) => (
+              <div key={i}>
+                <div className="stat-number">{s.label}</div>
+                <div className="stat-label">{s.value}</div>
+              </div>
+            ))}
+          </motion.div>
+        )}
 
       </div>
-
-      {/* SCROLL */}
-     {/*  <motion.div
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 2, repeat: Infinity }}
-        className="scroll-indicator"
-      >
-        <div className="scroll-dot" />
-      </motion.div> */}
 
     </section>
   )
