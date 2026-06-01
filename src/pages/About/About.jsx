@@ -57,12 +57,11 @@ export default function AboutPage() {
         <div className="welcome-container">
 
           <p className="text-lg">
-            Välkommen till MAC Service – trädgård, fastighet och bygg i mellersta Sverige.
-          </p>
-
-          <p className="text-lg">
+            Välkommen till MAC Service – trädgård, fastighet och bygg i mellersta Sverige.<br />
             Jag utgår från Köping och hjälper både privatpersoner och företag.
           </p>
+
+         
           </div>
           <div className="about-story-card">
 
