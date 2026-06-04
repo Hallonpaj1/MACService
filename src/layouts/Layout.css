@@ -8,6 +8,29 @@
   color: #000;
 }
 
+/* Skip link */
+.skip-link {
+  position: fixed;
+  top: 0;
+  left: 1rem;
+  z-index: 1000;
+  padding: 0.85rem 1.1rem;
+  border-radius: 0 0 0.75rem 0.75rem;
+  background: #0f172a;
+  color: #ffffff;
+  font-weight: 600;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.25);
+  transform: translateY(-140%);
+  transition: transform 0.2s ease;
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+  transform: translateY(0.75rem);
+  outline: 3px solid #ffffff;
+  outline-offset: 3px;
+}
+
 /* MAIN CONTENT */
 .main {
   flex: 1;

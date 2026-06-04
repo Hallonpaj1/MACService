@@ -5,6 +5,19 @@ import ScrollToTop from "../utils/ScrollToTop";
 import "./Layout.css";
 
 export default function Layout() {
+  const handleSkipLinkClick = (event) => {
+    event.preventDefault();
+
+    const mainContent = document.getElementById("main-content");
+
+    if (!mainContent) {
+      return;
+    }
+
+    mainContent.focus({ preventScroll: true });
+    mainContent.scrollIntoView({ block: "start" });
+  };
+
   return (
     <div className="layout">
 
@@ -15,6 +28,7 @@ export default function Layout() {
       <a
         href="#main-content"
         className="skip-link"
+        onClick={handleSkipLinkClick}
       >
         Hoppa till innehåll
       </a>
@@ -26,8 +40,8 @@ export default function Layout() {
       <main
         id="main-content"
         className="main"
-        role="main"
         aria-label="Huvudinnehåll"
+        tabIndex={-1}
       >
         <Outlet />
       </main>

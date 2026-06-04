@@ -12,57 +12,17 @@ function App() {
   return (
     <HelmetProvider>
       <Router>
-        {/* Skip link för accessibility */}
-        <a href="#main-content" className="skip-link">
-          Hoppa till innehåll
-        </a>
-
         <Routes>
           <Route element={<Layout />}>
-            <Route
-              index
-              element={
-                <main id="main-content" tabIndex={-1}>
-                  <Home />
-                </main>
-              }
-            />
+            <Route index element={<Home />} />
 
-            <Route
-              path="about"
-              element={
-                <main id="main-content" tabIndex={-1}>
-                  <AboutPage />
-                </main>
-              }
-            />
+            <Route path="about" element={<AboutPage />} />
 
-            <Route
-              path="services"
-              element={
-                <main id="main-content" tabIndex={-1}>
-                  <Services />
-                </main>
-              }
-            />
+            <Route path="services" element={<Services />} />
 
-            <Route
-              path="contact"
-              element={
-                <main id="main-content" tabIndex={-1}>
-                  <Contact />
-                </main>
-              }
-            />
+            <Route path="contact" element={<Contact />} />
 
-            <Route
-              path="*"
-              element={
-                <main id="main-content" tabIndex={-1}>
-                  <NotFound />
-                </main>
-              }
-            />
+            <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
       </Router>
