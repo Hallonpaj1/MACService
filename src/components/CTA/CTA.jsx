@@ -1,12 +1,14 @@
-import { motion } from "framer-motion"
-import { ArrowRight } from "lucide-react"
-import { Link } from "react-router-dom"
-import "./CTA.css"
+import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
+import "./CTA.css";
 
 export default function CTA() {
-
   return (
-    <section className="cta-section">
+    <section
+      className="cta-section"
+      aria-labelledby="cta-title"
+    >
 
       <motion.div
         initial={{ opacity: 0, y: 40 }}
@@ -16,24 +18,32 @@ export default function CTA() {
         className="cta-container"
       >
 
-        <h2 className="cta-title">
-          Är Du Redo För Professionell Service?
+        <h2 id="cta-title" className="cta-title">
+          Behöver du professionell trädgård, bygg eller fastighetsskötsel?
         </h2>
 
         <p className="cta-text">
-          Kontakta oss idag och låt oss ta hand om din trädgård,
-          fastighet eller byggprojekt med högsta kvalitet.
+          Kontakta MAC Service idag för en kostnadsfri offert.
+          Vi hjälper både privatpersoner och företag med pålitlig och kvalitativ service.
         </p>
 
         <div className="cta-buttons">
 
-          <Link to="/contact" className="btn-primary">
-            Kontakta Oss
-            <ArrowRight size={18} className="btn-icon" />
+          <Link
+            to="/contact"
+            className="btn-primary"
+            aria-label="Gå till kontaktsidan för att begära offert"
+          >
+            Kontakta oss
+            <ArrowRight size={18} className="btn-icon" aria-hidden="true" />
           </Link>
 
-          <Link to="/about" className="btn-secondary">
-            Läs Mer Om Oss
+          <Link
+            to="/about"
+            className="btn-secondary"
+            aria-label="Läs mer om MAC Service"
+          >
+            Om oss
           </Link>
 
         </div>
@@ -41,5 +51,5 @@ export default function CTA() {
       </motion.div>
 
     </section>
-  )
+  );
 }

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion"
 import { Mail, Phone, MapPin } from "lucide-react"
+import { Link } from "react-router-dom"
 import "./Footer.css"
 import logo from "../../assets/logo/LogoTransparent.png"
 
@@ -8,97 +9,142 @@ export default function Footer() {
   const currentYear = new Date().getFullYear()
 
   const contactLinks = [
-    { icon: Phone, label: "Telefon", value: "073 227 55 40", href: "tel:+46732275540" },
-    { icon: Mail, label: "Email", value: "hello@macservice.se", href: "mailto:hello@macservice.se" },
-    { icon: MapPin, label: "Plats", value: "Köping, Sverige", href: "#/contact#map" },
+    {
+      icon: Phone,
+      label: "Telefon",
+      value: "073 227 55 40",
+      href: "tel:+46732275540",
+    },
+    {
+      icon: Mail,
+      label: "Email",
+      value: "hello@macservice.se",
+      href: "mailto:hello@macservice.se",
+    },
+    {
+      icon: MapPin,
+      label: "Plats",
+      value: "Köping, Sverige",
+      href: "/contact#map",
+    },
   ]
 
   const footerLinks = [
-    { title: "Tjänster", links: ["Trädgårdsservice", "Byggnationer", "Fastighetsskötsel"] },
-    { title: "Företag", links: ["Om Oss", "Kontakt"] },
-    { title: "Socialt", links: ["Instagram", "Facebook", "LinkedIn"] },
+    {
+      title: "Tjänster",
+      links: [
+        { label: "Trädgårdsservice", to: "/services" },
+        { label: "Byggnationer", to: "/services" },
+        { label: "Fastighetsskötsel", to: "/services" },
+      ],
+    },
+    {
+      title: "Företag",
+      links: [
+        { label: "Om Oss", to: "/about" },
+        { label: "Kontakt", to: "/contact" },
+      ],
+    },
+    {
+      title: "Socialt",
+      links: [
+        {
+          label: "Instagram",
+          href: "https://www.instagram.com/macservicekoping?igsh=Zjd4dHMyOXNuZnd1",
+        },
+        {
+          label: "Facebook",
+          href: "https://www.facebook.com/mac.service.2025",
+        },
+        {
+          label: "LinkedIn",
+          href: "https://se.linkedin.com/in/andreas-collin-429089349",
+        },
+      ],
+    },
   ]
 
   return (
-    <footer className="footer">
+    <footer className="footer" aria-label="Sidfot">
 
       <div className="footer-container">
 
-        {/* GRID */}
-        <div className="footer-grid">
+        {/* BRAND */}
+        <section className="footer-grid">
 
-          {/* BRAND */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
+          <div>
             <div className="footer-logo">
-              <img src={logo} alt="MAC Service" />
+              <img src={logo} alt="MAC Service logotyp" />
               <span className="footer-name">MAC Service</span>
             </div>
 
             <p className="footer-text">
-              Din lokala partner för professionell service inom trädgård,
-              byggnation och fastighetsskötsel.
+              Professionell trädgårdsservice, byggnation och fastighetsskötsel i Köping med omnejd.
             </p>
 
-            <div className="footer-icons">
-              {contactLinks.map((c, i) => (
-                <motion.a
-                  key={i}
-                  href={c.href}
-                  whileHover={{ y: -2 }}
-                  className="footer-icon"
-                >
-                  <c.icon size={18} />
-                </motion.a>
-              ))}
-            </div>
-          </motion.div>
+            <nav aria-label="Kontaktinformation">
+              <div className="footer-icons">
+                {contactLinks.map((c, i) => {
+                  const Icon = c.icon
+
+                  return (
+                    <a
+                      key={i}
+                      href={c.href}
+                      className="footer-icon"
+                      aria-label={c.label}
+                    >
+                      <Icon size={18} />
+                    </a>
+                  )
+                })}
+              </div>
+            </nav>
+          </div>
 
           {/* LINKS */}
           {footerLinks.map((col, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.1 }}
-            >
+            <div key={i}>
               <h4 className="footer-title">{col.title}</h4>
 
               <ul className="footer-links">
                 {col.links.map((link, j) => {
-                  let href = "#"
-                  if (link === "Instagram") href = "https://www.instagram.com/macservicekoping?igsh=Zjd4dHMyOXNuZnd1"
-                  else if (link === "Facebook") href = "https://www.facebook.com/mac.service.2025"
-                  else if (link === "LinkedIn") href = "https://se.linkedin.com/in/andreas-collin-429089349"
-                  else if (link === "Kontakt") href = "#/contact"
-                  else if (link === "Om Oss") href = "#/about"
 
+                  // Internal links (SEO friendly SPA routing)
+                  if (link.to) {
+                    return (
+                      <li key={j}>
+                        <Link to={link.to}>{link.label}</Link>
+                      </li>
+                    )
+                  }
+
+                  // External links
                   return (
                     <li key={j}>
-                      <a href={href} target={href !== "#" ? "_blank" : undefined} rel={href !== "#" ? "noreferrer" : undefined}>{link}</a>
+                      <a
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {link.label}
+                      </a>
                     </li>
                   )
                 })}
               </ul>
-            </motion.div>
+            </div>
           ))}
 
-        </div>
+        </section>
 
         {/* DIVIDER */}
         <div className="footer-divider" />
 
         {/* COPYRIGHT */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          className="footer-bottom"
-        >
-          © {currentYear} MAC Service. Alla rättigheter reserverade.
-        </motion.div>
+        <div className="footer-bottom">
+          <p>© {currentYear} MAC Service. Alla rättigheter reserverade.</p>
+        </div>
 
       </div>
     </footer>

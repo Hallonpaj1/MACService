@@ -1,29 +1,26 @@
-import { useState, useEffect } from "react"
-import { motion } from "framer-motion"
-import { Mail, Phone, MapPin, Send } from "lucide-react"
-import "./Contact.css"
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { Mail, Phone, MapPin, Send } from "lucide-react";
+import "./Contact.css";
 
 export default function Contact() {
-
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    message: ""
-  })
+    message: "",
+  });
 
-  const [submitted, setSubmitted] = useState(false)
-  const [isLoading, setIsLoading] = useState(false)
+  const [submitted, setSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     try {
       if (typeof window !== "undefined" && window.location.hash.includes("map")) {
-        const el = document.getElementById("contact-map")
-        if (el) setTimeout(() => el.scrollIntoView({ behavior: "smooth" }), 150)
+        const el = document.getElementById("contact-map");
+        if (el) setTimeout(() => el.scrollIntoView({ behavior: "smooth" }), 150);
       }
-    } catch (e) {
-      // ignore
-    }
-  }, [])
+    } catch (e) {}
+  }, []);
 
   const contactMethods = [
     {
@@ -47,18 +44,18 @@ export default function Contact() {
       link: "#/contact#map",
       color: "#e11d48",
     },
-  ]
+  ];
 
   const handleChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
-    })
-  }
+      [e.target.name]: e.target.value,
+    });
+  };
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
-    setIsLoading(true)
+    e.preventDefault();
+    setIsLoading(true);
 
     try {
       const res = await fetch("https://formspree.io/f/mlgkdjop", {
@@ -68,149 +65,183 @@ export default function Contact() {
           Accept: "application/json",
         },
         body: JSON.stringify(formData),
-      })
+      });
 
       if (res.ok) {
-        setSubmitted(true)
-        setFormData({
-          name: "",
-          email: "",
-          message: ""
-        })
-      } else {
-        console.error("Form submission failed")
+        setSubmitted(true);
+        setFormData({ name: "", email: "", message: "" });
       }
     } catch (err) {
-      console.error(err)
+      console.error(err);
     } finally {
-      setIsLoading(false)
+      setIsLoading(false);
     }
-  }
+  };
 
   return (
-    <div className="contact-page">
-      <div className="contact-hero-wrap">
+    <main className="contact-page" aria-label="Kontaktsida">
 
-        {/* HEADER */}
-        <section className="contact-header">
-          <h1 className="h1">Kontakta Oss</h1>
-          <p className="text">Vi ser fram emot att höra från dig</p>
-        </section>
+      {/* HERO / HEADER */}
+      <header className="contact-header">
+        <h1 className="h1">Kontakta Oss</h1>
+        <p className="text">
+          Vi ser fram emot att höra från dig i Köping med omnejd
+        </p>
+      </header>
 
-        {/* CONTACT METHODS */}
-        <section className="section contact-methods-section">
-          <div className="container">
+      {/* CONTACT METHODS */}
+      <section
+        className="section contact-methods-section"
+        aria-label="Kontaktuppgifter"
+      >
+        <div className="container">
 
-            <div className="contact-grid">
+          <div className="contact-grid">
 
-              {contactMethods.map((m, i) => {
-                const Icon = m.icon
+            {contactMethods.map((m, i) => {
+              const Icon = m.icon;
 
-                return (
-                  <motion.a
-                    key={i}
-                    href={m.link}
-                    whileHover={{ y: -6 }}
-                    className="contact-card"
+              return (
+                <motion.a
+                  key={i}
+                  href={m.link}
+                  whileHover={{ y: -6 }}
+                  className="contact-card"
+                  aria-label={m.title}
+                >
+                  <div
+                    className="contact-icon"
+                    style={{ background: m.color }}
+                    aria-hidden="true"
                   >
-                    <div
-                      className="contact-icon"
-                      style={{ background: m.color }}
-                    >
-                      <Icon color="white" />
-                    </div>
+                    <Icon color="white" />
+                  </div>
 
-                    <h3>{m.title}</h3>
-                    <p>{m.content}</p>
-                  </motion.a>
-                )
-              })}
-
-            </div>
+                  <h3>{m.title}</h3>
+                  <p>{m.content}</p>
+                </motion.a>
+              );
+            })}
 
           </div>
-        </section>
 
-        {/* FORM */}
-        <section className="section contact-form-section">
-          <div className="container">
+        </div>
+      </section>
 
-            <div className="form-wrapper">
+      {/* FORM */}
+      <section
+        className="section contact-form-section"
+        aria-label="Kontaktformulär"
+      >
+        <div className="container">
 
-              {submitted ? (
-                <div className="success">
-                  <h2>Tack!</h2>
-                  <p>Vi kontaktar dig snart.</p>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit}>
+          <div className="form-wrapper">
 
-                  <input
-                    className="input"
-                    name="name"
-                    placeholder="Namn"
-                    value={formData.name}
-                    onChange={handleChange}
-                  />
+            {submitted ? (
+              <div className="success" role="status">
+                <h2>Tack!</h2>
+                <p>Vi kontaktar dig snart.</p>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} aria-label="Kontaktformulär">
 
-                  <input
-                    className="input"
-                    name="email"
-                    placeholder="Email"
-                    value={formData.email}
-                    onChange={handleChange}
-                  />
+                {/* NAME */}
+                <label htmlFor="name" className="sr-only">
+                  Namn
+                </label>
+                <input
+                  id="name"
+                  className="input"
+                  name="name"
+                  placeholder="Namn"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  autoComplete="name"
+                />
 
-                  <textarea
-                    className="input"
-                    name="message"
-                    rows="5"
-                    placeholder="Meddelande"
-                    value={formData.message}
-                    onChange={handleChange}
-                  />
+                {/* EMAIL */}
+                <label htmlFor="email" className="sr-only">
+                  E-post
+                </label>
+                <input
+                  id="email"
+                  className="input"
+                  name="email"
+                  placeholder="Email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  autoComplete="email"
+                />
 
-                  <button className="btn" disabled={isLoading}>
-                    <Send size={18} />
-                    {isLoading ? "Skickar..." : "Skicka"}
-                  </button>
+                {/* MESSAGE */}
+                <label htmlFor="message" className="sr-only">
+                  Meddelande
+                </label>
+                <textarea
+                  id="message"
+                  className="input"
+                  name="message"
+                  rows="5"
+                  placeholder="Meddelande"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                />
 
-                </form>
-              )}
+                <button
+                  className="btn"
+                  disabled={isLoading}
+                  aria-busy={isLoading}
+                >
+                  <Send size={18} aria-hidden="true" />
+                  {isLoading ? "Skickar..." : "Skicka"}
+                </button>
 
-            </div>
+              </form>
+            )}
 
           </div>
-        </section>
 
-        {/* MAP */}
-        <section className="section contact-map-section">
-          <div className="container">
+        </div>
+      </section>
 
-            <div id="contact-map" className="map">
-              <iframe
-                title="map"
-                width="100%"
-                height="100%"
-                loading="lazy"
-                src="https://www.google.com/maps?q=K%C3%B6ping%2C%20Sverige&output=embed"
-              />
-            </div>
+      {/* MAP */}
+      <section
+        className="section contact-map-section"
+        aria-label="Karta"
+      >
+        <div className="container">
 
+          <div id="contact-map" className="map">
+            <iframe
+              title="Karta över Köping"
+              width="100%"
+              height="100%"
+              loading="lazy"
+              src="https://www.google.com/maps?q=K%C3%B6ping%2C%20Sverige&output=embed"
+            />
           </div>
-        </section>
 
-        {/* CTA */}
-        <section className="cta contact-cta">
-          <h2>Redo att börja?</h2>
-          <p>Kontakta oss idag</p>
+        </div>
+      </section>
 
-          <a href="tel:+46732275540" aria-label="Ring 073 227 55 40">
-            Ring oss
-          </a>
-        </section>
+      {/* CTA */}
+      <section className="cta contact-cta" aria-label="Call to action">
 
-      </div>
-    </div>
-  )
+        <h2>Redo att börja?</h2>
+        <p>Kontakta oss idag för offert i Köping</p>
+
+        <a
+          href="tel:+46732275540"
+          aria-label="Ring 073 227 55 40"
+        >
+          Ring oss
+        </a>
+
+      </section>
+
+    </main>
+  );
 }

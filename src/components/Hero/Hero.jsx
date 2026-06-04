@@ -4,86 +4,93 @@ import { useNavigate } from "react-router-dom"
 import logo from "../../assets/logo/LogoTransparent.png"
 import "./Hero.css"
 
-
 export default function Hero({ showStats = true }) {
 
   const navigate = useNavigate()
 
   const stats = [
-    { label: "100+", value: "Projekt Genomförda" },
-    { label: "99%", value: "Nöjda Kunder" },
-    { label: "10+", value: "År Erfarenhet" },
+    { label: "100+", value: "Utförda projekt" },
+    { label: "99%", value: "Nöjda kunder" },
+    { label: "10+", value: "År av erfarenhet" },
   ]
 
   return (
-    <section className="hero">
+    <section className="hero" aria-label="Huvudsektion">
+
       <div className="hero-container">
 
-      <motion.img
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.8 }}
-        src={logo}
-        alt="MAC Service Logo"
-        className="hero-logo"
-      />
+        {/* LOGO */}
+        <motion.img
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8 }}
+          src={logo}
+          alt="MAC Service logotyp"
+          className="hero-logo"
+        />
 
-        {/* LABEL */}
-        <motion.div
+        {/* INTRO TEXT */}
+        <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="hero-label"
         >
-          Välkommen till MAC Service – trädgård, fastighetsskötsel och bygg i mellersta Sverige.
-        </motion.div>
+          Professionell trädgårdsservice, fastighetsskötsel och bygg i Köping och mellersta Sverige.
+        </motion.p>
 
-        {/* TITLE */}
+        {/* HEADLINE (SEO VIKTIG) */}
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
           className="hero-title"
-        ><span className="hero-gradient">
-          Trädgård, fastighetsskötsel
-          <br />
-            och bygg till rätt pris
+        >
+          <span className="hero-gradient">
+            Trädgårdsskötsel, fastighetsservice
+            <br />
+            och byggtjänster till rätt pris
           </span>
         </motion.h1>
 
-        {/* BUTTONS */}
+        {/* CTA BUTTONS */}
         <div className="hero-buttons">
 
           <motion.button
             whileHover={{ y: -2 }}
+            whileTap={{ scale: 0.98 }}
             className="btn-primary"
-            onClick={() => navigate('/contact')}
+            onClick={() => navigate("/contact")}
+            aria-label="Gå till kontaktsida"
           >
-            Kontakta Oss
-            <ArrowRight size={18} />
+            Kontakta oss
+            <ArrowRight size={18} aria-hidden="true" />
           </motion.button>
 
           <motion.button
             whileHover={{ y: -2 }}
+            whileTap={{ scale: 0.98 }}
             className="btn-secondary"
-            onClick={() => navigate('/services')}
+            onClick={() => navigate("/services")}
+            aria-label="Visa våra tjänster"
           >
-            <Play size={18} />
-            Se Våra Tjänster
+            <Play size={18} aria-hidden="true" />
+            Våra tjänster
           </motion.button>
 
         </div>
 
-        {/* STATS (optional) */}
+        {/* STATS */}
         {showStats && (
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="hero-stats"
+            aria-label="Statistik om företaget"
           >
             {stats.map((s, i) => (
-              <div key={i}>
+              <div key={i} className="stat-item">
                 <div className="stat-number">{s.label}</div>
                 <div className="stat-label">{s.value}</div>
               </div>
@@ -92,7 +99,6 @@ export default function Hero({ showStats = true }) {
         )}
 
       </div>
-
     </section>
   )
 }

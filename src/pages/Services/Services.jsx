@@ -17,21 +17,21 @@ export default function Services() {
   const mainServices = [
     {
       icon: Leaf,
-      title: "Trädgårdsservice",
+      title: "Trädgårdsservice i Köping",
       description:
-        "Från dagligt underhåll till större designprojekt. Vi skapar och vårdar trädgårdar som du älskar.",
+        "Professionell trädgårdsskötsel, underhåll och design för privata och kommersiella fastigheter.",
     },
     {
       icon: Hammer,
-      title: "Byggnationer",
+      title: "Bygg & Renovering",
       description:
-        "Professionell byggnation och renovering. Vi realiserar dina idéer med högsta kvalitet.",
+        "Högkvalitativa bygg- och renoveringstjänster anpassade efter dina behov och projekt.",
     },
     {
       icon: Home,
       title: "Fastighetsskötsel",
       description:
-        "Fullständig fastighetsskötsel in- och utvändigt för både privatpersoner och företag.",
+        "Helhetslösningar för fastighetsunderhåll, både invändigt och utvändigt.",
     },
   ];
 
@@ -40,36 +40,43 @@ export default function Services() {
       icon: Scissors,
       title: "Beskärning & Klippning",
       description:
-        "Professionell beskärning av träd och buskar. Vi formar och vårdar din vegetation optimalt.",
+        "Säker och professionell beskärning av träd, buskar och grönytor för optimal tillväxt.",
     },
     {
       icon: Wrench,
-      title: "Underhålls Arbeten",
+      title: "Löpande Underhåll",
       description:
-        "Löpande underhållsarbeten som håller din fastighet i toppskick året runt.",
+        "Regelbunden service som håller din fastighet i toppskick året runt.",
     },
     {
       icon: Paintbrush,
-      title: "Målning & Renovering",
+      title: "Målning & Ytskikt",
       description:
-        "Målning, renovering och förbättring av bostäder och lokaler.",
+        "Invändig och utvändig målning samt renovering med fokus på hållbarhet och finish.",
     },
   ];
 
   return (
-    <div className="services-page">
-      <div className="services-hero-wrap">
+    <main className="services-page" aria-label="Tjänstesida för MAC Service">
 
-      {/* HEADER */}
-      <section className="services-header">
-        <h1 className="services-title">Våra Tjänster</h1>
-        <p className="services-subtitle">
-          Omfattande lösningar för trädgård, bygg och fastighetsskötsel
-        </p>
-      </section>
+      {/* HERO */}
+      <header className="services-hero-wrap">
+        <section className="services-header" aria-labelledby="services-title">
+          <h1 id="services-title" className="services-title">
+            Våra tjänster i Köping och Mälardalen
+          </h1>
+
+          <p className="services-subtitle">
+            Vi erbjuder professionell trädgårdsskötsel, byggnation och fastighetsskötsel för privatpersoner och företag.
+          </p>
+        </section>
+      </header>
 
       {/* MAIN SERVICES */}
-      <section className="section services-main-section">
+      <section
+        className="section services-main-section"
+        aria-label="Huvudtjänster"
+      >
         <div className="container">
           <div className="grid-3">
             {mainServices.map((s, i) => (
@@ -85,12 +92,15 @@ export default function Services() {
         </div>
       </section>
 
-      {/* DETAILED */}
-      <section className="section features-section services-detailed-section">
+      {/* DETAILED SERVICES */}
+      <section
+        className="section services-detailed-section"
+        aria-label="Detaljerade tjänster"
+      >
         <div className="container">
 
-          <h2 style={{ textAlign: "center", fontSize: "40px", marginBottom: "60px" }}>
-            Detaljerade Tjänster
+          <h2 className="section-title">
+            Detaljerade tjänster
           </h2>
 
           <div className="grid-3">
@@ -108,59 +118,67 @@ export default function Services() {
         </div>
       </section>
 
-      {/* FEATURES */}
-      <section className="section services-features-section">
+      {/* EXPECTATIONS */}
+      <section
+        className="section services-features-section"
+        aria-label="Vad kunden kan förvänta sig"
+      >
         <div className="container">
 
-          <h2 style={{ textAlign: "center", fontSize: "40px", marginBottom: "60px" }}>
-            Vad Du Kan Förvänta Dig
+          <h2 className="section-title">
+            Vad du kan förvänta dig
           </h2>
 
-          <div style={{ display: "grid", gap: "16px" }}>
+          <ul className="features-list">
             {[
-              "Kostnadsfri konsultation",
-              "Transparenta priser",
-              "Professionellt utförande",
-              "Pålitlighet",
+              "Kostnadsfri offert och konsultation",
+              "Tydliga och transparenta priser",
+              "Professionellt och noggrant utfört arbete",
+              "Pålitlig service och snabb återkoppling",
             ].map((f, i) => (
-              <motion.div
+              <motion.li
                 key={i}
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 className="feature-item"
               >
-                <div>✓</div>
-                <div>{f}</div>
-              </motion.div>
+                <span aria-hidden="true">✓</span>
+                <span>{f}</span>
+              </motion.li>
             ))}
-          </div>
+          </ul>
 
         </div>
       </section>
 
       {/* CTA */}
-      <section className="section cta services-cta">
+      <section
+        className="section services-cta"
+        aria-label="Kontaktuppmaning"
+      >
         <div className="container">
 
           <div className="services-cta-content">
-            <h2 style={{ fontSize: "42px" }}>
+            <h2>
               Intresserad av våra tjänster?
             </h2>
 
             <p className="services-cta-text">
-              Kontakta oss för offert
+              Kontakta oss idag för en kostnadsfri offert
             </p>
 
-            <Link to="/contact" className="btn">
-              Begär Offert
+            <Link
+              to="/contact"
+              className="btn"
+              aria-label="Gå till kontaktsidan för offert"
+            >
+              Begär offert
             </Link>
           </div>
 
         </div>
       </section>
 
-      </div>
-
-    </div>
+    </main>
   );
 }

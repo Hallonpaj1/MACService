@@ -13,7 +13,7 @@ export default function Navbar() {
 
   const links = [
     { name: "Hem", path: "/" },
-    { name: "Om", path: "/about" },
+    { name: "Om oss", path: "/about" },
     { name: "Tjänster", path: "/services" },
     { name: "Kontakt", path: "/contact" },
   ]
@@ -22,38 +22,50 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 100)
+      setIsScrolled(window.scrollY > 80)
     }
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
   return (
-    <nav className={`navbar ${isScrolled ? "scrolled" : ""}`}>
+    <nav
+      className={`navbar ${isScrolled ? "scrolled" : ""}`}
+      aria-label="Huvudnavigation"
+    >
 
       <div className="navbar-container">
 
         {/* LOGO */}
-        <Link to="/" className="navbar-logo">
-          <img src={logo} alt="MAC Service" />
+        <Link
+          to="/"
+          className="navbar-logo"
+          aria-label="Gå till startsidan"
+        >
+          <img src={logo} alt="MAC Service logotyp" />
           <span className="navbar-brand">MAC Service</span>
         </Link>
 
-        {/* DESKTOP LINKS */}
-        <div className="navbar-links">
+        {/* DESKTOP NAV */}
+        <div className="navbar-links" role="navigation" aria-label="Huvudmeny">
           {links.map((link) => (
             <Link
               key={link.path}
               to={link.path}
               className={isActive(link.path) ? "active" : ""}
+              aria-current={isActive(link.path) ? "page" : undefined}
             >
               {link.name}
             </Link>
           ))}
         </div>
 
-        {/* CTA */}
-        <Link to="/contact" className="navbar-cta">
+        {/* CTA (SEO + conversion viktigt) */}
+        <Link
+          to="/contact"
+          className="navbar-cta"
+          aria-label="Kontakta MAC Service"
+        >
           Kontakta oss
         </Link>
 
@@ -61,8 +73,10 @@ export default function Navbar() {
         <button
           className="navbar-toggle"
           onClick={() => setIsOpen(!isOpen)}
+          aria-label={isOpen ? "Stäng meny" : "Öppna meny"}
+          aria-expanded={isOpen}
         >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
+          {isOpen ? <X size={24} aria-hidden="true" /> : <Menu size={24} aria-hidden="true" />}
         </button>
 
       </div>
@@ -73,12 +87,15 @@ export default function Navbar() {
         animate={{ opacity: isOpen ? 1 : 0, y: isOpen ? 0 : -10 }}
         transition={{ duration: 0.3 }}
         className={`mobile-menu ${isOpen ? "open" : ""}`}
+        role="navigation"
+        aria-label="Mobilmeny"
       >
         {links.map((link) => (
           <Link
             key={link.path}
             to={link.path}
             className={isActive(link.path) ? "active" : ""}
+            aria-current={isActive(link.path) ? "page" : undefined}
             onClick={() => setIsOpen(false)}
           >
             {link.name}
@@ -89,6 +106,7 @@ export default function Navbar() {
           to="/contact"
           className="mobile-cta"
           onClick={() => setIsOpen(false)}
+          aria-label="Kontakta oss"
         >
           Kontakta oss
         </Link>
