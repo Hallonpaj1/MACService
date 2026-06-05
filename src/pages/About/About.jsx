@@ -59,7 +59,8 @@ export default function AboutPage() {
         <div className="container">
 
           <p className="text-lg">
-            Välkommen till MAC Service – vi erbjuder trädgårdsskötsel, fastighetsskötsel och enklare byggtjänster i Köping och mellersta Sverige.
+            Vi erbjuder trädgårdsskötsel, fastighetsskötsel och enklare byggtjänster i Köping och mellersta Sverige.<br />
+           
             Vi hjälper både privatpersoner och företag med pålitlig och noggrann service.
           </p>
 

@@ -20,6 +20,12 @@
   color: #0f172a;
   max-width: 700px;
   margin: 0 auto;
+  padding: 10px 16px;
+  display: inline-block;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
   line-height: 1.7;
 }
 
@@ -43,7 +49,10 @@
 }
 
 .services-cta {
-  padding: 0 24px;
+  padding: 120px 24px;
+  background: linear-gradient(135deg, #0f9d58 0%, #065f46 100%);
+  color: #ffffff;
+  text-align: center;
 }
 
 .container {
@@ -89,12 +98,14 @@
 
 /* FEATURE LIST */
 .feature-item {
+  width: 100%;
   display: flex;
   gap: 16px;
   padding: 20px;
   border-radius: 12px;
   background: #ecfdf5;
   border: 1px solid rgba(88, 185, 152, 0.2);
+  margin-bottom: 1rem;
 }
 
 /* CTA */
@@ -113,20 +124,19 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding:120px 24px;
 }
 
 .services-cta-text {
   padding-bottom: 30px;
 }
 
+.section-title {
+text-align: center;
+  margin-bottom: 1rem;
+}
 /* Apply CTA gradient to the services page CTA section */
 .services-page .section.cta {
-  background: linear-gradient(135deg, #0f9d58 0%, #065f46 100%);
-  color: #ffffff;
-  padding: 6rem 0;
-}
-
-.services-page .section.cta.services-cta {
   margin-bottom: 0;
 }
 
@@ -167,7 +177,8 @@
   }
 
   .services-subtitle {
-    font-size: 16px;
+    font-size: 17px;
+    padding: 8px 14px;
   }
 
   .services-page .section {
@@ -201,7 +212,7 @@
   }
 
   .services-page .section.cta {
-    padding: 4rem 1rem;
+    padding: 80px 16px;
   }
 
   .services-cta-text {

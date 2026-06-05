@@ -40,7 +40,7 @@ export default function AboutSection() {
             </h2>
 
             <p className="about-text">
-              Välkommen till MAC Service – vi erbjuder professionell trädgårdsskötsel,
+              Vi erbjuder professionell trädgårdsskötsel,
               fastighetsskötsel och byggtjänster i mellersta Sverige.
             </p>
 

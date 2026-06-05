@@ -153,7 +153,7 @@ export default function Services() {
 
       {/* CTA */}
       <section
-        className="section services-cta"
+        className="section cta services-cta"
         aria-label="Kontaktuppmaning"
       >
         <div className="container">

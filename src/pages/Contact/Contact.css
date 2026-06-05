@@ -44,7 +44,7 @@
 }
 
 .text {
-  font-size: 18px;
+  font-size: 19px;
   color: #475569;
   line-height: 1.7;
 }
@@ -52,6 +52,18 @@
 /* Improve contrast for the contact header intro */
 .contact-header .text {
   color: #0f172a;
+}
+
+.contact-header .text {
+  display: inline-block;
+  max-width: 720px;
+  padding: 10px 16px;
+  margin: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  line-height: 1.6;
 }
 
 /* CONTACT CARDS */
@@ -203,6 +215,12 @@
 
   .text {
     font-size: 16px;
+  }
+
+  .contact-header .text {
+    font-size: 15px;
+    padding: 8px 14px;
+    margin-bottom: 18px;
   }
 
   .contact-page .section {
