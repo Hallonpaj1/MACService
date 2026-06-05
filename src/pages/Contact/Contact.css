@@ -31,16 +31,22 @@
 
 /* HEADER */
 .contact-header {
-  padding: 2.5rem 3rem 3rem;
+  padding: 2rem 3rem 3rem;
   text-align: center;
   background: transparent;
 }
 
 /* TYPOGRAPHY */
 .h1 {
-  font-size: 56px;
+  position: relative;
+  z-index: 2;
+  font-size: 64px;
   font-weight: 600;
+  line-height: 1.05;
+  margin: 0 0 24px;
+  padding-top: 32px;
   color: #0f172a;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.35);
 }
 
 .text {

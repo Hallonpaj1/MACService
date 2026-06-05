@@ -4,22 +4,30 @@
 
 /* HEADER */
 .services-header {
+  position: relative;
+  z-index: 1;
   padding: 2rem 3rem 3rem;
   text-align: center;
   background: transparent;
 }
 
 .services-title {
-  font-size: 56px;
+  position: relative;
+  z-index: 2;
+  font-size: 64px;
   font-weight: 600;
+  line-height: 1.05;
+  margin: 0 0 24px;
+  padding-top: 32px;
   color: #0f172a;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.35);
 }
 
 .services-subtitle {
   font-size: 18px;
   color: #0f172a;
   max-width: 700px;
-  margin: 0 auto;
+  margin: 2rem auto 0;
   padding: 10px 16px;
   display: inline-block;
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -79,12 +87,12 @@
 
 /* Divider above Services when embedded on the Home page */
 .home .section.services .services-hero-wrap {
-  border-top: 1px solid rgba(0,0,0,0.1);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 /* CARD OVERRIDE (works with your ServiceCard component) */
 .service-card {
-  background: #e5e1e1;/* Service card backgroundsfärg */
+  background: #e5e1e1; /* Service card backgroundsfärg */
   border: 1px solid rgba(15, 23, 42, 0.1);
   border-radius: 18px;
   padding: 28px;
@@ -93,7 +101,7 @@
 
 .service-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
 }
 
 /* FEATURE LIST */
@@ -124,7 +132,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding:120px 24px;
+  padding: 120px 24px;
 }
 
 .services-cta-text {
@@ -132,9 +140,10 @@
 }
 
 .section-title {
-text-align: center;
+  text-align: center;
   margin-bottom: 1rem;
 }
+
 /* Apply CTA gradient to the services page CTA section */
 .services-page .section.cta {
   margin-bottom: 0;
@@ -212,7 +221,14 @@ text-align: center;
   }
 
   .services-page .section.cta {
-    padding: 80px 16px;
+    padding: 1rem 0;
+    margin-bottom: 0;
+  }
+
+  .services-cta-content {
+    padding: 3rem 0;
+    gap: 16px;
+    max-width: none;
   }
 
   .services-cta-text {

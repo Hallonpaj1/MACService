@@ -34,7 +34,6 @@ export default function AboutPage() {
       {/* HEADER */}
       <header className="section about-header" aria-label="Om oss header">
         <div className="container about-header-content">
-
           <motion.h1
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}

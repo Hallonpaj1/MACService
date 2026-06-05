@@ -7,6 +7,7 @@ import logo from "../../assets/logo/LogoTransparent.png"
 export default function Footer() {
 
   const currentYear = new Date().getFullYear()
+  const servicesLink = "/services"
 
   const contactLinks = [
     {
@@ -25,7 +26,7 @@ export default function Footer() {
       icon: MapPin,
       label: "Plats",
       value: "Köping, Sverige",
-      href: "/contact#map",
+      href: "/#/contact#map",
     },
   ]
 
@@ -33,9 +34,9 @@ export default function Footer() {
     {
       title: "Tjänster",
       links: [
-        { label: "Trädgårdsservice", to: "/services" },
-        { label: "Byggnationer", to: "/services" },
-        { label: "Fastighetsskötsel", to: "/services" },
+        { label: "Trädgårdsservice", to: servicesLink },
+        { label: "Byggnationer", to: servicesLink },
+        { label: "Fastighetsskötsel", to: servicesLink },
       ],
     },
     {

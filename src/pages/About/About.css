@@ -81,11 +81,15 @@
 .section.centered .values-grid,
 /* TYPOGRAPHY */
 .h1 {
-  font-size: 56px;
+  position: relative;
+  z-index: 2;
+  font-size: 64px;
   font-weight: 600;
+  line-height: 1.05;
+  margin: 0 0 24px;
+  padding-top: 32px;
   color: #0f172a;
-  line-height: 1.1;
-  
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.35);
 }
 
 .h2 {
@@ -103,14 +107,12 @@
 .about-header {
   background: transparent;
   text-align: center;
-  padding-top: 140px;
-  padding-bottom: 120px;
+  padding: 2rem 3rem 3rem;
 }
 
 .about-header-content {
   width: 100%;
-  margin: 1rem auto;
-  margin-top: 3rem;
+  margin: 2rem auto 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -271,6 +273,11 @@
     max-width: 100%;
     padding-left: 1rem;
     padding-right: 1rem;
+  }
+
+  .about-header .container {
+    margin-top: 2rem;
+    
   }
 
   .about-page .story-section,
