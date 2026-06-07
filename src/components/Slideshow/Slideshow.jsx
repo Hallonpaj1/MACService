@@ -10,11 +10,13 @@ export default function Slideshow({
 
   try {
     const modules = import.meta.glob(
-      "/src/assets/bilder/*.{png,jpg,jpeg,webp}",
+      "/src/assets/bilder/*.{png,jpg,jpeg}",
       { eager: true }
     )
 
-    images = Object.values(modules).map(m => m?.default || m)
+    images = Object.values(modules)
+      .map(m => m?.default || m)
+      .sort()
   } catch (e) {
     console.error("Slideshow import error:", e)
     images = []
@@ -32,6 +34,14 @@ export default function Slideshow({
     return () => clearInterval(id)
   }, [images.length, interval])
 
+  useEffect(() => {
+    if (!images.length) return
+
+    const nextSrc = images[(index + 1) % images.length]
+    const preloadImage = new Image()
+    preloadImage.src = nextSrc
+  }, [index, images])
+
   if (!images.length) {
     return (
       <div className="slideshow-empty" aria-label="Inga bilder tillgängliga" />
@@ -45,16 +55,16 @@ export default function Slideshow({
       aria-label={ariaLabel}
     >
 
-      {images.map((src, i) => (
-        <div
-          key={i}
-          className={`slide ${i === index ? "active" : ""}`}
-          style={{ backgroundImage: `url(${src})` }}
-          role="img"
-          aria-hidden={i !== index}
-          aria-label={`Projektbild ${i + 1}`}
-        />
-      ))}
+      <img
+        key={index}
+        className="slide-image"
+        src={images[index]}
+        alt={`Projektbild ${index + 1}`}
+        loading="lazy"
+        decoding="async"
+        width="1600"
+        height="1067"
+      />
 
       {/* Screen reader helper */}
       <span className="sr-only">

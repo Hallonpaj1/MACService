@@ -27,6 +27,11 @@ export default function Hero({ showStats = true }) {
           src={logo}
           alt="MAC Service logotyp"
           className="hero-logo"
+          width="420"
+          height="277"
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
         />
 
         {/* INTRO TEXT */}

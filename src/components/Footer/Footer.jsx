@@ -106,7 +106,7 @@ export default function Footer() {
           {/* LINKS */}
           {footerLinks.map((col, i) => (
             <div key={i}>
-              <h4 className="footer-title">{col.title}</h4>
+              <h3 className="footer-title">{col.title}</h3>
 
               <ul className="footer-links">
                 {col.links.map((link, j) => {

@@ -10,6 +10,9 @@
 
 .home .section.hero {
   padding: .5rem 2rem;
+  display: flex;
+  align-items: flex-start;
+  margin-top: 0;
 }
 
 .home .section.services {
@@ -30,12 +33,6 @@
 }
 
 /* cinematic separation */
-.hero {
-  min-height: 85vh;
-  display: flex;
-  align-items: flex-start;
-  margin-top: 0;
-}
 
 .services,
 .about,
@@ -66,5 +63,23 @@
   .home .section.hero .hero {
     min-height: auto;
     padding: 0;
+  }
+}
+
+/* Mobile devices in desktop-site mode often bypass width-based breakpoints */
+@media (hover: none) and (pointer: coarse) {
+  .home .section.hero {
+    min-height: auto;
+  }
+}
+
+/* Extra compact tuning for short mobile screens */
+@media (max-height: 740px) and (hover: none) and (pointer: coarse) {
+  .home .section.hero {
+    padding-top: 0.5rem;
+  }
+
+  .home .section.hero .hero {
+    padding-top: 0;
   }
 }
