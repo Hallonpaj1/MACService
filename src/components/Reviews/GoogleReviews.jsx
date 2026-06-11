@@ -2,7 +2,7 @@ import './GoogleReviews.css'
 import manualData from '../../data/google_reviews_manual.json'
 
 export default function GoogleReviews({
-  googleSearchUrl = 'https://www.google.com/search?q=MAC+Service+Köping+reviews'
+  googleSearchUrl = 'https://www.google.com/search?sca_esv=50d2a87678068abc&hl=sv-SE&sxsrf=ANbL-n6IlmqZnorgoqJIhIYmT7YWmomxsA:1781204311226&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOWe1Y8yog-4i7_C7onD_45TUbL3E2qaFMmsg-KUy1tdDOLznZV22jPlYycvzuR9Mq7Hc3Dvd_PPOIwly6GRumqbtxINr&q=MAC+Service+Recensioner&sa=X&ved=2ahUKEwjZtfiR7_-UAxXLIxAIHbN2Ov4Q0bkNegQIIRAF&biw=1912&bih=956&dpr=1'
 }) {
 
   const reviews = (manualData && manualData.reviews && manualData.reviews.length)
