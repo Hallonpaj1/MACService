@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Manrope:wght@200..800&display=swap');
+
 /* Minimal utility classes (inlined to avoid import resolution issues) */
 
 /* spacing */
@@ -60,8 +62,8 @@ svg[class] { display: inline-block; vertical-align: middle; }
 }
 
 :root {
-  --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
-  --heading: 'Outfit', var(--sans);
+  --sans: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+  --heading: 'Manrope', var(--sans);
   --primary: #2d4a22; /* Forest green */
   --primary-hover: #3b5f2c;
   --text-main: #1e293b;
