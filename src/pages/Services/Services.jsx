@@ -5,22 +5,16 @@ import {
   Home,
   Scissors,
   Wrench,
-  Paintbrush,
 } from "lucide-react";
 
 import ServiceCard from "../../components/ServiceCard/ServiceCard";
 import { Link } from "react-router-dom";
+import heroImg from "../../assets/hero-services.jpg";
 
 import "./Services.css";
 
 export default function Services() {
   const mainServices = [
-    {
-      icon: Leaf,
-      title: "Trädgårdsservice i Köping",
-      description:
-        "Professionell trädgårdsskötsel, underhåll och design för privata och kommersiella fastigheter.",
-    },
     {
       icon: Hammer,
       title: "Bygg & Renovering",
@@ -32,6 +26,12 @@ export default function Services() {
       title: "Fastighetsskötsel",
       description:
         "Helhetslösningar för fastighetsunderhåll, både invändigt och utvändigt.",
+    },
+    {
+      icon: Leaf,
+      title: "Trädgårdsservice",
+      description:
+        "Professionell trädgårdsskötsel, underhåll och design för privata och kommersiella fastigheter.",
     },
   ];
 
@@ -49,10 +49,10 @@ export default function Services() {
         "Regelbunden service som håller din fastighet i toppskick året runt.",
     },
     {
-      icon: Paintbrush,
-      title: "Målning & Ytskikt",
+      icon: Hammer,
+      title: "Snickeri & byggservice",
       description:
-        "Invändig och utvändig målning samt renovering med fokus på hållbarhet och finish.",
+        "Praktiska snickeri- och byggarbeten för underhåll, förbättringar och mindre projekt.",
     },
   ];
 
@@ -60,16 +60,15 @@ export default function Services() {
     <main className="services-page" aria-label="Tjänstesida för MAC Service">
 
       {/* HERO */}
-      <header className="services-hero-wrap">
-        <section className="services-header" aria-labelledby="services-title">
-          <h1 id="services-title" className="services-title">
-            Våra tjänster i Köping och Mälardalen
-          </h1>
-
-          <p className="services-subtitle">
+      <header className="page-hero">
+        <div className="page-hero-bg" style={{ backgroundImage: `url(${heroImg})` }}></div>
+        <div className="page-hero-overlay"></div>
+        <div className="page-hero-container">
+          <h1 className="page-hero-title">Våra tjänster i Köping och Mälardalen</h1>
+          <p className="page-hero-subtitle">
             Vi erbjuder professionell trädgårdsskötsel, byggnation och fastighetsskötsel för privatpersoner och företag.
           </p>
-        </section>
+        </div>
       </header>
 
       {/* MAIN SERVICES */}
@@ -77,7 +76,8 @@ export default function Services() {
         className="section services-main-section"
         aria-label="Huvudtjänster"
       >
-        <div className="container">
+        <div className="services-container">
+          <h2 className="section-title">Våra tjänster</h2>
           <div className="grid-3">
             {mainServices.map((s, i) => (
               <ServiceCard
@@ -97,7 +97,7 @@ export default function Services() {
         className="section services-detailed-section"
         aria-label="Detaljerade tjänster"
       >
-        <div className="container">
+        <div className="services-container">
 
           <h2 className="section-title">
             Detaljerade tjänster
@@ -126,7 +126,7 @@ export default function Services() {
         <div className="container">
 
           <h2 className="section-title">
-            Vad du kan förvänta dig
+            Vad du kan förvänta sig
           </h2>
 
           <ul className="features-list">
@@ -169,7 +169,7 @@ export default function Services() {
 
             <Link
               to="/contact"
-              className="btn"
+              className="btn btn-primary"
               aria-label="Gå till kontaktsidan för offert"
             >
               Begär offert

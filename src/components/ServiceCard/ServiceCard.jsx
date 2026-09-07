@@ -35,10 +35,6 @@ export default function ServiceCard({ icon: Icon, title, description, index }) {
         </p>
 
       </div>
-
-      {/* DECORATION */}
-      <div className="service-accent" aria-hidden="true" />
-
     </motion.article>
   )
 }

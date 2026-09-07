@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Send, ChevronRight } from "lucide-react";
+import heroImg from "../../assets/hero-contact.jpg";
 import "./Contact.css";
 
 export default function Contact() {
@@ -36,14 +37,7 @@ export default function Contact() {
       content: "Collinstradgardsservice@outlook.com",
       link: "mailto:Collinstradgardsservice@outlook.com",
       color: "#0f9d58",
-    },
-    {
-      icon: MapPin,
-      title: "Plats",
-      content: "Köping, Sverige",
-      link: "#/contact#map",
-      color: "#e11d48",
-    },
+    }
   ];
 
   const handleChange = (e) => {
@@ -82,11 +76,17 @@ export default function Contact() {
     <main className="contact-page" aria-label="Kontaktsida">
 
       {/* HERO / HEADER */}
-      <header className="contact-header">
-        <h1 className="h1">Kontakta Oss</h1>
-        <p className="text">
-          Vi ser fram emot att höra från dig i Köping med omnejd
-        </p>
+      <header className="page-hero">
+        <div className="page-hero-bg" style={{ backgroundImage: `url(${heroImg})` }}></div>
+        <div className="page-hero-overlay"></div>
+        <div className="page-hero-container">
+          <span className="hero-label">KONTAKTA OSS</span>
+          <h1 className="page-hero-title">Vi hjälper dig gärna!</h1>
+          <p className="page-hero-subtitle">
+            Har du frågor eller vill du ha en offert?<br/>
+            Hör av dig så återkommer vi.
+          </p>
+        </div>
       </header>
 
       {/* CONTACT METHODS */}
@@ -94,39 +94,56 @@ export default function Contact() {
         className="section contact-methods-section"
         aria-label="Kontaktuppgifter"
       >
-        <div className="container">
+          <div className="container">
+            <h2 className="section-title">Kontakta oss</h2>
+            <div className="contact-grid">
 
-          <div className="contact-grid">
+              {contactMethods.map((m, i) => {
+                const Icon = m.icon;
 
-            {contactMethods.map((m, i) => {
-              const Icon = m.icon;
-
-              return (
-                <motion.a
-                  key={i}
-                  href={m.link}
-                  whileHover={{ y: -6 }}
-                  className="contact-card"
-                  aria-label={m.title}
-                >
-                  <div
-                    className="contact-icon"
-                    style={{ background: m.color }}
-                    aria-hidden="true"
+                return (
+                  <motion.a
+                    key={i}
+                    href={m.link}
+                    whileHover={{ y: -4 }}
+                    className="contact-card"
+                    aria-label={m.title}
                   >
-                    <Icon color="white" />
-                  </div>
+                    <div
+                      className="contact-icon"
+                      style={{ background: m.color }}
+                      aria-hidden="true"
+                    >
+                      <Icon color="white" size={24} />
+                    </div>
 
-                  <h3>{m.title}</h3>
-                  <p>{m.content}</p>
-                </motion.a>
-              );
-            })}
+                    <div className="contact-info">
+                      <h3>{m.title}</h3>
+                      <p>{m.content}</p>
+                    </div>
+
+                    <div className="contact-arrow">
+                      <ChevronRight color="#444" size={20} />
+                    </div>
+                  </motion.a>
+                );
+              })}
+
+              {/* LOCATION BOX */}
+              <div className="location-box">
+                <div className="location-icon">
+                  <MapPin size={24} color="#ffffff" />
+                </div>
+                <div className="location-info">
+                  <h3>Verksamma i Köping med omnejd</h3>
+                  <p>Vi utgår från Köping och hjälper privatpersoner och företag i närområdet.</p>
+                </div>
+              </div>
+
+            </div>
 
           </div>
-
-        </div>
-      </section>
+        </section>
 
       {/* FORM */}
       <section
@@ -134,7 +151,7 @@ export default function Contact() {
         aria-label="Kontaktformulär"
       >
         <div className="container">
-
+          <h2 className="section-title">Skicka ett meddelande</h2>
           <div className="form-wrapper">
 
             {submitted ? (
@@ -213,7 +230,7 @@ export default function Contact() {
         aria-label="Karta"
       >
         <div className="container">
-
+          <h2 className="section-title">Hitta oss</h2>
           <div id="contact-map" className="map">
             <iframe
               title="Karta över Köping"
@@ -225,21 +242,6 @@ export default function Contact() {
           </div>
 
         </div>
-      </section>
-
-      {/* CTA */}
-      <section className="cta contact-cta" aria-label="Call to action">
-
-        <h2>Redo att börja?</h2>
-        <p>Kontakta oss idag för offert i Köping</p>
-
-        <a
-          href="tel:+46732275540"
-          aria-label="Ring 073 227 55 40"
-        >
-          Ring oss
-        </a>
-
       </section>
 
     </main>

@@ -1,5 +1,6 @@
 .home {
   overflow-x: hidden;
+  background-color: #2a521e;
 }
 
 /* section spacing system */
@@ -8,23 +9,22 @@
   padding: 0;
 }
 
+
+
 .home .section.hero {
-  padding: .5rem 2rem;
+  padding: 0;
+  margin: 0;
   display: flex;
   align-items: flex-start;
-  margin-top: 0;
 }
 
-.home .section.services {
-  padding: 1rem 2rem;
-}
-
+.home .section.services,
 .home .section.about {
-  padding: 2rem 2rem;
+  padding: 0; /* Removing outer padding so inner component backgrounds are full bleed */
 }
 
 .home .section.cta {
-  padding: 1rem 2rem;
+  padding: 0 2rem;
 }
 
 /* smooth stacking feel */
@@ -33,7 +33,6 @@
 }
 
 /* cinematic separation */
-
 .services,
 .about,
 .cta {
@@ -42,44 +41,30 @@
 
 /* Scope green background to the CTA section only */
 .home .section.cta {
-  background: linear-gradient(135deg, #0f9d58 0%, #065f46 100%);
+  background-color: #223d18;
   color: #ffffff;
 }
 
 @media (max-width: 768px) {
-  .home .section.hero,
   .home .section.services,
-  .home .section.about,
+  .home .section.about {
+    padding: 0; /* Ensure no padding on mobile either */
+  }
+  
   .home .section.cta {
     padding-left: 1rem;
     padding-right: 1rem;
-  }
-
-  .home .section.hero {
-    min-height: auto;
-    padding-top: 1rem;
-  }
-
-  .home .section.hero .hero {
-    min-height: auto;
-    padding: 0;
+    padding-top: 0;
+    padding-bottom: 0;
   }
 }
 
 /* Mobile devices in desktop-site mode often bypass width-based breakpoints */
 @media (hover: none) and (pointer: coarse) {
-  .home .section.hero {
-    min-height: auto;
-  }
+  /* No hero override here anymore */
 }
 
 /* Extra compact tuning for short mobile screens */
 @media (max-height: 740px) and (hover: none) and (pointer: coarse) {
-  .home .section.hero {
-    padding-top: 0.5rem;
-  }
-
-  .home .section.hero .hero {
-    padding-top: 0;
-  }
+  /* No hero override here anymore */
 }

@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom"
 import { Menu, X } from "lucide-react"
 import { motion } from "framer-motion"
 import "./Navbar.css"
-import logo from "../../assets/logo/LogoTransparent.png"
+import logo from "../../assets/logo/LogoTransparentWhite.png"
 
 export default function Navbar() {
 

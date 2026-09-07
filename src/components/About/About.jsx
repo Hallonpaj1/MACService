@@ -36,12 +36,12 @@ export default function AboutSection() {
               id="about-section-title"
               className="about-title"
             >
-              Din lokala partner för fastighetsskötsel och trädgårdsservice
+              Din lokala partner för byggnation, fastighetsskötsel och trädgårdsservice
             </h2>
 
             <p className="about-text">
-              Vi erbjuder professionell trädgårdsskötsel,
-              fastighetsskötsel och byggtjänster i mellersta Sverige.
+              Vi erbjuder professionella byggtjänster,
+              byggnation, fastighetsskötsel och trädgårdsskötsel i mellersta Sverige.
             </p>
 
             <p className="about-text">

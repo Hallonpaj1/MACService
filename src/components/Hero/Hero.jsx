@@ -1,21 +1,19 @@
 import { motion } from "framer-motion"
-import { ArrowRight, Play } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 import { useNavigate } from "react-router-dom"
-import logo from "../../assets/logo/LogoTransparent.png"
+import logo from "../../assets/logo/LogoTransparentWhite.png"
 import "./Hero.css"
 
-export default function Hero({ showStats = true }) {
+export default function Hero({ showStats = false }) {
 
   const navigate = useNavigate()
 
-  const stats = [
-    { label: "100+", value: "Utförda projekt" },
-    { label: "99%", value: "Nöjda kunder" },
-    { label: "10+", value: "År av erfarenhet" },
-  ]
-
   return (
     <section className="hero" aria-label="Huvudsektion">
+
+      {/* BACKGROUND IMAGE & OVERLAY */}
+      <div className="hero-bg" aria-hidden="true"></div>
+      <div className="hero-overlay" aria-hidden="true"></div>
 
       <div className="hero-container">
 
@@ -27,81 +25,69 @@ export default function Hero({ showStats = true }) {
           src={logo}
           alt="MAC Service logotyp"
           className="hero-logo"
-          width="420"
-          height="277"
+          width="180"
+          height="180"
           loading="eager"
           fetchPriority="high"
           decoding="async"
         />
 
-        {/* INTRO TEXT */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="hero-label"
-        >
-          Professionell trädgårdsservice, fastighetsskötsel och bygg i Köping och mellersta Sverige.
-        </motion.p>
-
-        {/* HEADLINE (SEO VIKTIG) */}
-        <motion.h1
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          className="hero-title"
-        >
-          <span className="hero-gradient">
-            Trädgårdsskötsel, fastighetsservice
-            <br />
-            och byggtjänster till rätt pris
-          </span>
-        </motion.h1>
-
-        {/* CTA BUTTONS */}
-        <div className="hero-buttons">
-
-          <motion.button
-            whileHover={{ y: -2 }}
-            whileTap={{ scale: 0.98 }}
-            className="btn-primary"
-            onClick={() => navigate("/contact")}
-            aria-label="Gå till kontaktsida"
-          >
-            Kontakta oss
-            <ArrowRight size={18} aria-hidden="true" />
-          </motion.button>
-
-          <motion.button
-            whileHover={{ y: -2 }}
-            whileTap={{ scale: 0.98 }}
-            className="btn-secondary"
-            onClick={() => navigate("/services")}
-            aria-label="Visa våra tjänster"
-          >
-            <Play size={18} aria-hidden="true" />
-            Våra tjänster
-          </motion.button>
-
-        </div>
-
-        {/* STATS */}
-        {showStats && (
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+        <div className="hero-content">
+          {/* INTRO TEXT */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="hero-stats"
-            aria-label="Statistik om företaget"
+            className="hero-label"
           >
-            {stats.map((s, i) => (
-              <div key={i} className="stat-item">
-                <div className="stat-number">{s.label}</div>
-                <div className="stat-label">{s.value}</div>
-              </div>
-            ))}
-          </motion.div>
-        )}
+            MAC SERVICE
+          </motion.p>
+
+          {/* HEADLINE */}
+          <motion.h1
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            className="hero-title"
+          >
+            Trädgård & fastighetsskötsel i Köping
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.2 }}
+            className="hero-subtitle"
+          >
+            Din lokala partner för noggrann och personlig service – för både privatpersoner och företag.
+          </motion.p>
+
+          {/* CTA BUTTONS */}
+          <div className="hero-buttons">
+
+            <motion.button
+              whileHover={{ y: -2 }}
+              whileTap={{ scale: 0.98 }}
+              className="btn-primary"
+              onClick={() => navigate("/contact")}
+              aria-label="Gå till kontaktsida"
+            >
+              Kontakta oss
+              <ArrowRight size={18} aria-hidden="true" />
+            </motion.button>
+
+            <motion.button
+              whileHover={{ y: -2 }}
+              whileTap={{ scale: 0.98 }}
+              className="btn-secondary"
+              onClick={() => navigate("/services")}
+              aria-label="Visa våra tjänster"
+            >
+              Se våra tjänster
+            </motion.button>
+
+          </div>
+        </div>
 
       </div>
     </section>

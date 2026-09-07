@@ -80,7 +80,7 @@ export default function Footer() {
             </div>
 
             <p className="footer-text">
-              Professionell trädgårdsservice, byggnation och fastighetsskötsel i Köping med omnejd.
+              Professionell byggnation, fastighetsskötsel och trädgårdsservice i Köping med omnejd.
             </p>
 
             <nav aria-label="Kontaktinformation">

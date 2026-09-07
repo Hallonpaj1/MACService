@@ -1,155 +1,136 @@
+/* ============================================
+   ABOUT PAGE — Green Design System
+   story    → ljus grön  (#2a521e → #356627)
+   values   → mörk grön  (#223d18 → #2b4e1f)
+   cta      → ljus grön  (#2a521e → #356627)
+============================================ */
+
 .about-page {
   overflow: hidden;
-  color: #000;
+  background-color: transparent;
 }
 
-/* SECTIONS */
+/* SECTION BASE */
 .about-page .section {
   position: relative;
-  padding: 0;
+  padding: 128px 0;
+  margin: 0;
 }
 
+
+
+/* ---- STORY (ljus grön) ---- */
 .story-section {
-  padding: 1rem 2rem;
+  background-color: #356627;
+  color: #fff;
 }
 
-.values-section {
-  padding: 1rem 2rem;
+.story-section .container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
-.section.centered.values-section {
-  padding: 3rem 0 4rem;
+.story-container {
+  max-width: 760px;
 }
 
-.values-section h2 {
-  margin-bottom: 24px;
+.story-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 1rem;
 }
 
-.about-cta {
-  padding: 1rem 2rem;
-}
-
-.about-cta-content {
-  width: 100%;
-  max-width: none;
-  margin: 5rem 0 0;
-  padding:120px 24px;
-  position: relative;
-  z-index: 10;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 24px;
-  background: linear-gradient(135deg, #0f9d58 0%, #065f46 100%);
-}
-
-.welcome-container {
-  max-width: 1280px;
-  width: 100%;
-  text-align: center;
-  margin: 2rem auto 0 auto;
-  padding-top: 1rem;
-  position: relative;
-  z-index: 10;
-}
-
-.welcome-container::before {
+.story-label::before {
   content: "";
   display: block;
   width: 100%;
-  max-width: 720px;
   height: 1px;
-  margin: 0 auto 1rem;
-  background: rgba(0,0,0,0.1);
+  margin: 0 0 1rem;
+  background: rgba(255, 255, 255, 0.1);
 }
 
-/* center top-level content like on Home */
-.about-page .container {
-  text-align: center;
-  max-width: 1280px;
-  margin-top: 2rem;
+.story-title {
+  font-size: 36px;
+  font-weight: 500;
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.01em;
 }
 
-/* center specific sections (header/story/values) while preserving internal left-aligned boxes */
-.section.centered .container,
-.about-header .container {
-  text-align: center;
-}
-
-.section.centered .about-story-card,
-.section.centered .values-grid,
-/* TYPOGRAPHY */
-.h1 {
-  position: relative;
-  z-index: 2;
-  font-size: 64px;
-  font-weight: 600;
-  line-height: 1.05;
-  margin: 0 0 24px;
-  padding-top: 32px;
-  color: #0f172a;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.35);
-}
-
-.h2 {
-  font-size: 42px;
-  font-weight: 600;
-  color: #0f172a;
-}
-
-.text-lg {
-  font-size: 1.2rem;
+.story-text {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.8);
   line-height: 1.7;
+  margin-bottom: 2rem;
 }
 
-/* HEADER */
-.about-header {
-  background: transparent;
-  text-align: center;
-  padding: 2rem 3rem 3rem;
+.story-section .text-lg {
+  font-size: 18px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 2rem;
 }
 
-.about-header-content {
-  width: 100%;
+/* STORY CARD */
+.about-story-card {
+  max-width: 800px;
   margin: 2rem auto 0;
+  padding: 48px;
+  text-align: left;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.about-story-card .text-lg {
+  color: #fff;
+  font-weight: 600;
+  font-size: 17px;
+}
+
+/* CHECK LIST */
+.check-list {
+  margin-top: 1.5rem;
   display: flex;
   flex-direction: column;
+  gap: 14px;
+}
+
+.check-item {
+  display: flex;
+  gap: 12px;
   align-items: center;
-  justify-content: center;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.check-item span {
+  font-size: 16px;
+}
+
+/* ---- VALUES (mörk grön) ---- */
+.values-section {
+  background-color: #223d18;
+  color: #fff;
+}
+
+.values-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.values-section .h2 {
+  font-size: 40px;
+  font-weight: 500;
+  color: #fff;
   text-align: center;
-  gap: 0.75rem;
-}
-
-.about-header .text-lg {
-  display: inline-block;
-  max-width: 720px;
-  padding: 10px 16px;
-  margin: 2rem 0 0;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(10px);
-  color: #0f172a;
-  line-height: 1.6;
-}
-
-/* STORY BOX */
-.about-story-card {
-  max-width: 760px;
-  margin: 1rem auto 0 auto;
-  padding: 36px 40px;
-  text-align: left;
-  border-radius: 24px;
-  background: linear-gradient(135deg, rgba(236, 253, 245, 0.96), rgba(255, 255, 255, 0.92));
-  border: 1px solid rgba(15, 157, 88, 0.16);
-  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
-  backdrop-filter: blur(10px);
-}
-
-/* hide 1px seams between stacked sections for a smooth gradient flow */
-.section:not(:first-child) {
-  margin-top: -1px;
+  margin-bottom: 0;
 }
 
 /* VALUES GRID */
@@ -157,164 +138,142 @@
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 24px;
-}
-
-.value-card {
-  text-align: center;
+  margin-top: 4rem;
 }
 
 /* VALUE CARD */
 .value-card {
+  position: relative;
   background: #fff;
-  border: 1px solid rgba(15, 23, 42, 0.1);
-  border-radius: 16px;
-  padding: 28px;
-  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 8px;
+  padding: 40px 28px;
+  transition: all 0.25s ease;
+  text-align: center;
+  overflow: hidden;
 }
 
-.value-card h3,
+.value-card h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #2b4e1f;
+  margin-bottom: 12px;
+  transition: color 0.2s ease;
+}
+
 .value-card p {
-  text-align: center;
+  color: #475569;
+  font-size: 16px;
+  line-height: 1.6;
 }
 
 .value-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  background: #f8fafc;
+  border-color: rgba(34, 56, 22, 0.15);
+  transform: translateY(-4px);
 }
 
 .value-icon {
   width: 56px;
   height: 56px;
-  background: #0f9d58;
-  border-radius: 12px;
+  background: #2b4e1f;
+  color: #fff;
+  border-radius: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 18px auto;
-}
-.cta {
-  background: linear-gradient(135deg, #0f9d58 0%, #065f46 100%);
-  color: white;
-  text-align: center;
-}
-.cta-button {
-  display: inline-block;
-  padding: 14px 28px;
-  border-radius: 999px;
-  background: #fff;
-  color: #0f9d58;
-  font-weight: 600;
+  margin: 0 auto 24px auto;
   transition: all 0.3s ease;
 }
 
-.cta-button:hover {
+.value-card:hover .value-icon {
+  background: #356627;
+  color: #fff;
   transform: scale(1.05);
-  background: #f1f5f9;
 }
-/* CTA */
-/* CTA */
 
-/* LIST */
-.check-list {
-  margin-top: 1rem;
+/* ---- CTA (ljus grön) ---- */
+.about-cta {
+  background-color: #356627;
+}
+
+.about-cta-content {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  text-align: center;
   display: flex;
   flex-direction: column;
-  gap: 12px;
-}
-
-.check-item {
-  display: flex;
-  gap: 10px;
   align-items: center;
+  gap: 28px;
 }
 
-.check-item span {
+.about-cta-content h2 {
+  font-size: 40px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.about-cta-content p {
   font-size: 18px;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.7;
 }
 
+.cta-button {
+  display: inline-block;
+  padding: 16px 40px;
+  border-radius: var(--radius-sm);
+  background: #fff;
+  color: #223d18;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.cta-button:hover {
+  background: #f0f7ee;
+  transform: translateY(-2px);
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
 @media (max-width: 1100px) {
   .values-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-@media (max-width: 640px) {
-  .values-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
 @media (max-width: 768px) {
-  .about-header {
-    padding-top: 96px;
-    padding-bottom: 72px;
+  .about-page .section {
+    padding: 100px 0;
   }
 
-  .about-header-content {
-    margin-top: 1rem;
-  }
-
-  .about-header .text-lg {
-    font-size: 14px;
-    padding: 8px 14px;
-    margin-bottom: 8px;
-  }
-
-  .welcome-container {
-    padding-top: 0.75rem;
-  }
-
-  .welcome-container::before {
-    margin-bottom: 0.75rem;
-  }
-
-  .about-page .container {
-    margin-top: 1rem;
-    max-width: 100%;
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-
-  .about-header .container {
-    margin-top: 2rem;
-    
-  }
-
-  .about-page .story-section,
-  .about-page .values-section,
-  .about-page .about-cta {
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-  .about-page .stats-grid {
-    padding: 1rem 0;
-  }
-
-  .h1 {
-    font-size: 40px;
-  }
-
-  .h2 {
-    font-size: 32px;
-  }
-
-  .text-lg {
-    font-size: 16px;
+  .story-section .container,
+  .values-section .container,
+  .about-cta-content {
+    padding: 0 1.5rem;
   }
 
   .about-story-card {
-    padding: 28px 24px;
-    margin: 1rem auto 0;
+    padding: 32px 24px;
   }
 
-  .about-cta-content {
-    margin-top: 3rem;
-    padding: 3rem 0;
-    gap: 16px;
+  .values-section .h2 {
+    font-size: 30px;
   }
 
   .values-grid {
+    grid-template-columns: 1fr;
     gap: 16px;
+  }
+
+  .about-cta-content h2 {
+    font-size: 30px;
   }
 }

@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { CheckCircle2, Users, Trophy, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
+import heroImg from "../../assets/hero-about.jpg";
 import "./About.css";
 
 export default function AboutPage() {
@@ -19,7 +20,7 @@ export default function AboutPage() {
     {
       icon: Trophy,
       title: "Erfarenhet",
-      description: "Många års erfarenhet inom trädgårds- och fastighetsskötsel.",
+      description: "Många års erfarenhet inom fastighets- och trädgårdsservice.",
     },
     {
       icon: Zap,
@@ -31,61 +32,69 @@ export default function AboutPage() {
   return (
     <main className="about-page" aria-label="Om MAC Service">
 
-      {/* HEADER */}
-      <header className="section about-header" aria-label="Om oss header">
-        <div className="container about-header-content">
-          <motion.h1
+      {/* HERO */}
+      <header className="page-hero">
+        <div className="page-hero-bg" style={{ backgroundImage: `url(${heroImg})` }}></div>
+        <div className="page-hero-overlay"></div>
+        <div className="page-hero-container">
+          <motion.h1 
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="h1"
+            className="page-hero-title"
           >
             Om MAC Service i Köping
           </motion.h1>
-
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="text-lg"
+            className="page-hero-subtitle"
           >
-            Din lokala partner för professionell trädgårds- och fastighetsskötsel i Köping med omnejd
+            Din lokala partner för professionell fastighets- och trädgårdsservice i Köping med omnejd
           </motion.p>
-
         </div>
       </header>
 
       {/* STORY */}
       <section className="section story-section" aria-label="Vår berättelse">
-        <div className="container">
+        <div className="container story-container">
 
-          <p className="text-lg">
-            Vi erbjuder trädgårdsskötsel, fastighetsskötsel och enklare byggtjänster i Köping och mellersta Sverige.<br />
-           
-            Vi hjälper både privatpersoner och företag med pålitlig och noggrann service.
-          </p>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <span className="story-label">Om oss</span>
 
-          <div className="about-story-card" aria-label="Vad vi erbjuder">
+            <h2 className="story-title">
+              Din lokala partner för trädgård och fastighet i Köping
+            </h2>
 
-            <p className="text-lg font-semibold mb-4">
-              Hos oss får du:
+            <p className="story-text">
+              Vi erbjuder byggnation, fastighetsskötsel och trädgårdsskötsel i Köping och mellersta Sverige.
+              Vi hjälper både privatpersoner och företag med pålitlig och noggrann service.
             </p>
 
-            <div className="check-list">
-
+            <ul className="check-list" aria-label="Vad vi erbjuder">
               {[
                 "Personlig service",
                 "Noggrant utfört arbete",
                 "Rimliga priser",
                 "Flexibla lösningar",
               ].map((item, i) => (
-                <div key={i} className="check-item">
-                  <CheckCircle2 size={14} aria-hidden="true" />
+                <motion.li
+                  key={i}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ delay: i * 0.1 }}
+                  className="check-item"
+                >
+                  <CheckCircle2 size={16} aria-hidden="true" />
                   <span>{item}</span>
-                </div>
+                </motion.li>
               ))}
-
-            </div>
-
-          </div>
+            </ul>
+          </motion.div>
 
         </div>
       </section>
@@ -109,7 +118,7 @@ export default function AboutPage() {
                   aria-label={v.title}
                 >
                   <div className="value-icon" aria-hidden="true">
-                    <Icon color="white" />
+                    <Icon size={32} strokeWidth={1.5} />
                   </div>
 
                   <h3 className="text-lg font-semibold">{v.title}</h3>

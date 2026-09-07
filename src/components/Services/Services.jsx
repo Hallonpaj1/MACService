@@ -14,12 +14,13 @@ const ServiceCard = ({ icon: Icon, title, description, delay }) => {
     >
 
       <div className="service-icon" aria-hidden="true">
-        <Icon size={24} />
+        <Icon size={32} strokeWidth={1.5} />
       </div>
 
-      <h3>{title}</h3>
-
-      <p>{description}</p>
+      <div className="service-content">
+        <h3>{title}</h3>
+        <p>{description}</p>
+      </div>
 
     </motion.article>
   )
@@ -28,12 +29,6 @@ const ServiceCard = ({ icon: Icon, title, description, delay }) => {
 export default function Services() {
 
   const services = [
-    {
-      icon: Leaf,
-      title: "Trädgårdsservice i Köping",
-      description:
-        "Professionell trädgårdsskötsel, plantering, beskärning och löpande underhåll för privatpersoner och företag.",
-    },
     {
       icon: Hammer,
       title: "Byggtjänster & renovering",
@@ -46,34 +41,34 @@ export default function Services() {
       description:
         "Löpande fastighetsskötsel inklusive underhåll, målning, snöröjning och enklare reparationer.",
     },
+    {
+      icon: Leaf,
+      title: "Trädgårdsservice",
+      description:
+        "Professionell trädgårdsskötsel, plantering, beskärning och löpande underhåll för privatpersoner och företag.",
+    },
   ]
 
   return (
     <section
       className="services-section"
-      aria-label="Våra tjänster inom trädgård, bygg och fastighetsskötsel"
+      aria-label="Våra tjänster inom bygg, fastighet och trädgård"
     >
 
       <div className="services-container">
 
-        {/* HEADER (SEO VIKTIGT) */}
+        {/* LEFT COLUMN: HEADER */}
         <header className="services-header">
-
           <span className="services-label">
-            Tjänster i Köping
+            VAD VI HJÄLPER DIG MED
           </span>
-
           <h2 className="services-title">
-            Professionell trädgårdsservice, bygg och fastighetsskötsel
+            Vi erbjuder byggnation, fastighetsskötsel och trädgårdsskötsel.
           </h2>
-
-          <p className="services-subtitle">
-            Vi erbjuder kompletta lösningar för din fastighet i Köping med omnejd.
-          </p>
 
         </header>
 
-        {/* GRID */}
+        {/* RIGHT COLUMN: GRID */}
         <div className="services-grid">
           {services.map((s, i) => (
             <ServiceCard

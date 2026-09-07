@@ -1,20 +1,24 @@
 .cta-section {
   position: relative;
   overflow: hidden;
-  padding: 4rem 1rem;
-  background: linear-gradient(135deg, #0f9d58 0%, #065f46 100%);
+  padding: 0;
+  /* Padding moved to container */
+  background: transparent;
+  /* Background is now controlled by Home.css */
   color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* container */
 .cta-container {
-  
   max-width: 900px;
-  margin: 0 auto;
+  margin: 0;
+  padding: 128px 2rem;
   text-align: center;
   position: relative;
   z-index: 10;
-  
 }
 
 /* headline */
@@ -29,7 +33,7 @@
 /* subtitle */
 .cta-text {
   font-size: 18px;
-  color: rgba(255,255,255,0.9);
+  color: rgba(255, 255, 255, 0.9);
   line-height: 1.7;
   margin-bottom: 48px;
   max-width: 600px;
@@ -43,7 +47,7 @@
   gap: 16px;
   justify-content: center;
   flex-wrap: wrap;
-  margin:1rem;
+  margin: 1rem;
 }
 
 /* PRIMARY BUTTON */
@@ -51,21 +55,19 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 14px 22px;
-  border-radius: 999px;
+  padding: 16px 32px;
+  border-radius: var(--radius-sm);
   background: #ffffff;
-  color: #065f46;
+  color: #12210c;
   font-weight: 600;
-  border: 1px solid rgba(255,255,255,0.15);
-  transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
-  box-shadow: 0 6px 18px rgba(4, 120, 87, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.2s ease;
+  font-size: 16px;
 }
 
 .cta-section .btn-primary:hover {
-  transform: translateY(-4px);
-  background: #047857;
-  color: #ffffff;
-  box-shadow: 0 10px 28px rgba(4, 120, 87, 0.18);
+  transform: translateY(-2px);
+  background: #f8fafc;
 }
 
 /* SECONDARY BUTTON */
@@ -73,18 +75,18 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 14px 22px;
-  border-radius: 999px;
+  padding: 16px 32px;
+  border-radius: var(--radius-sm);
   background: transparent;
-  color: rgba(255,255,255,0.95);
-  border: 1px solid rgba(255,255,255,0.22);
-  transition: transform 0.22s ease, background 0.22s ease, color 0.22s ease;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.2s ease;
+  font-size: 16px;
 }
 
 .cta-section .btn-secondary:hover {
-  transform: translateY(-4px);
-  background: rgba(255,255,255,0.95);
-  color: #065f46;
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 /* ICON ANIMATION */
@@ -93,12 +95,17 @@
 }
 
 .cta-section .btn-primary:hover .btn-icon {
-  transform: translateX(6px);
+  transform: translateX(4px);
 }
 
 @media (max-width: 768px) {
   .cta-section {
-    padding: 3rem 1rem;
+    padding: 0;
+    margin: 0;
+  }
+
+  .cta-container {
+    padding: 128px 24px;
   }
 
   .cta-title {
@@ -122,5 +129,5 @@
     width: 100%;
     justify-content: center;
   }
-}
 
+}

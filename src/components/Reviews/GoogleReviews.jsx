@@ -29,7 +29,7 @@ export default function GoogleReviews({
         </h2>
 
         <p className="reviews-subtitle">
-          Läs vad våra kunder säger om vår trädgårdsservice, bygg och fastighetsskötsel
+          Läs vad våra kunder säger om vår byggnation, fastighetsskötsel och trädgårdsservice
         </p>
 
         {/* REVIEWS LIST */}
