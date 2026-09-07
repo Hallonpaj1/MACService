@@ -3,6 +3,16 @@
   background: transparent;
 }
 
+/* Label-override – sobrar, mer professionell stil för kontaktsidan */
+.contact-page .hero-label {
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
 .contact-page .container {
   max-width: 700px;
   margin: 0 auto;

@@ -1,9 +1,11 @@
+/* ERROR PAGE */
 .error-page {
   min-height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 6rem 1.5rem;
+  background-color: #223d18;
 }
 
 .error-content {
@@ -12,52 +14,59 @@
   margin: 0 auto;
   padding: 3rem 2rem;
   text-align: center;
-  border-radius: 28px;
-  background: rgba(255, 255, 255, 0.78);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(15, 23, 42, 0.08);
-  box-shadow: 0 24px 70px rgba(15, 23, 42, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.25);
 }
 
+/* LOGO */
 .error-logo {
   width: 220px;
   height: auto;
   display: block;
-  margin: 0 auto 1rem;
+  margin: 0 auto 1.5rem;
   object-fit: contain;
 }
 
+/* 404 label + icon */
 .error-code {
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #0f9d58;
-  margin-bottom: 1rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
 }
 
+.error-icon {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* HEADING */
 .error-title {
-  font-size: clamp(2rem, 5vw, 4rem);
-  line-height: 1.05;
-  color: #0f172a;
-  margin-bottom: 1rem;
+  font-size: clamp(1.75rem, 5vw, 3rem);
+  line-height: 1.1;
+  color: #ffffff;
+  margin-bottom: 1.25rem;
+  font-weight: 700;
 }
 
+/* BODY TEXT */
 .error-text {
-  font-size: 1.125rem;
-  line-height: 1.7;
-  color: #334155;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.8);
   max-width: 42rem;
-  margin: 0 auto 0.75rem;
+  margin: 0 auto 2rem;
 }
 
-.error-path {
-  font-size: 0.95rem;
-  color: #64748b;
-  margin-bottom: 2rem;
-  word-break: break-word;
-}
-
+/* BUTTONS */
 .error-actions {
   display: flex;
   justify-content: center;
@@ -70,23 +79,41 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 0;
-  padding: 14px 22px;
-  border-radius: 999px;
+  padding: 14px 28px;
+  border-radius: var(--radius-sm);
   text-decoration: none;
+  font-size: 16px;
   font-weight: 600;
-  transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease;
+  transition: transform 0.2s ease, background 0.2s ease;
 }
 
 .error-button:hover {
   transform: translateY(-2px);
 }
 
+/* Primary — vit bakgrund, mörk text (samma som CTA) */
 .error-button.primary {
-  background: linear-gradient(135deg, #0f9d58 0%, #065f46 100%);
-  color: #fff;
+  background: #ffffff;
+  color: #12210c;
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
+.error-button.primary:hover {
+  background: #f8fafc;
+}
+
+/* Secondary — transparent med vit border */
+.error-button.secondary {
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.error-button.secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* RESPONSIVE */
 @media (max-width: 768px) {
   .error-page {
     padding: 4rem 1rem;
@@ -102,12 +129,11 @@
 
   .error-actions {
     flex-direction: column;
+    align-items: stretch;
   }
 
   .error-button {
-    width: auto;
-    align-self: center;
-    min-width: 0;
-    padding: 12px 18px;
+    width: 100%;
+    justify-content: center;
   }
 }

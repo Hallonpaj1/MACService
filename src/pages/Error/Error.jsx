@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import logo from "../../assets/logo/LogoTransparent.png";
+import { HardHat } from "lucide-react";
+import logo from "../../assets/logo/LogoTransparentWhite.png";
 import "./Error.css";
 
 export default function NotFound() {
@@ -30,6 +31,7 @@ export default function NotFound() {
           className="error-code"
           aria-hidden="true"
         >
+          <HardHat size={40} strokeWidth={1.5} className="error-icon" aria-hidden="true" />
           404
         </motion.p>
 
@@ -41,7 +43,7 @@ export default function NotFound() {
           transition={{ duration: 0.5, delay: 0.05 }}
           className="error-title"
         >
-          Sidan kunde inte hittas
+          Hoppsan! Här verkar vi ha byggt lite fel.
         </motion.h1>
 
         {/* TEXT */}
@@ -51,7 +53,9 @@ export default function NotFound() {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="error-text"
         >
-          Den här sidan finns inte längre eller har flyttats.
+          Sidan du letar efter verkar ha tagit en annan väg.
+          <br />
+          Vi hjälper gärna till att hitta rätt – gå tillbaka till startsidan eller kontakta oss om du behöver hjälp.
         </motion.p>
 
         {/* ACTION */}
@@ -62,6 +66,13 @@ export default function NotFound() {
             aria-label="Gå tillbaka till startsidan"
           >
             Till startsidan
+          </Link>
+          <Link
+            to="/contact"
+            className="error-button secondary"
+            aria-label="Gå till kontaktsidan"
+          >
+            Kontakta oss
           </Link>
         </div>
 
