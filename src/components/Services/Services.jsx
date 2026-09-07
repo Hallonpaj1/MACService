@@ -63,7 +63,7 @@ export default function Services() {
             VAD VI HJÄLPER DIG MED
           </span>
           <h2 className="services-title">
-            Vi erbjuder byggnation, fastighetsskötsel och trädgårdsskötsel.
+            Vi erbjuder byggnation, fastighetsskötsel och trädgårdsservice.
           </h2>
 
         </header>

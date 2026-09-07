@@ -19,7 +19,7 @@ export default function CTA() {
       >
 
         <h2 id="cta-title" className="cta-title">
-          Behöver du professionell byggnation, fastighetsskötsel eller trädgårdsskötsel?
+          Behöver du professionell hjälp med byggnation, fastighetsskötsel eller trädgårdsservice?
         </h2>
 
         <p className="cta-text">

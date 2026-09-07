@@ -209,6 +209,12 @@
   background: var(--primary-hover);
 }
 
+@media (max-width: 1024px) {
+  .services-page .services-container {
+    padding: 0 40px;
+  }
+}
+
 @media (max-width: 768px) {
   .services-page .services-container {
     padding: 0 16px;

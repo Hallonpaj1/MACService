@@ -50,7 +50,7 @@ export default function Hero({ showStats = false }) {
             transition={{ duration: 1 }}
             className="hero-title"
           >
-            Trädgård & fastighetsskötsel i Köping
+            Byggnation, fastighet & trädgårdsservice
           </motion.h1>
 
           <motion.p

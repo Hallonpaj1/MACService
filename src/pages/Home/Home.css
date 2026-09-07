@@ -20,7 +20,8 @@
 
 .home .section.services,
 .home .section.about {
-  padding: 0; /* Removing outer padding so inner component backgrounds are full bleed */
+  padding: 0;
+  /* Removing outer padding so inner component backgrounds are full bleed */
 }
 
 .home .section.cta {
@@ -46,11 +47,13 @@
 }
 
 @media (max-width: 768px) {
+
   .home .section.services,
   .home .section.about {
-    padding: 0; /* Ensure no padding on mobile either */
+    padding: 0;
+    /* Ensure no padding on mobile either */
   }
-  
+
   .home .section.cta {
     padding-left: 1rem;
     padding-right: 1rem;
@@ -60,11 +63,7 @@
 }
 
 /* Mobile devices in desktop-site mode often bypass width-based breakpoints */
-@media (hover: none) and (pointer: coarse) {
-  /* No hero override here anymore */
-}
+@media (hover: none) and (pointer: coarse) {}
 
 /* Extra compact tuning for short mobile screens */
-@media (max-height: 740px) and (hover: none) and (pointer: coarse) {
-  /* No hero override here anymore */
-}
+@media (max-height: 740px) and (hover: none) and (pointer: coarse) {}

@@ -34,9 +34,9 @@ export default function Footer() {
     {
       title: "Tjänster",
       links: [
-        { label: "Trädgårdsservice", to: servicesLink },
         { label: "Byggnationer", to: servicesLink },
         { label: "Fastighetsskötsel", to: servicesLink },
+        { label: "Trädgårdsservice", to: servicesLink },
       ],
     },
     {

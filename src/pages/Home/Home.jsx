@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <>
       <Helmet>
-        <title>Byggtjänster och trädgårdsskötsel | MAC Service</title>
+        <title>Byggtjänster, fastighetsskötsel & trädgårdsservice | MAC Service</title>
 
         <meta
           name="description"

@@ -66,7 +66,7 @@ export default function Services() {
         <div className="page-hero-container">
           <h1 className="page-hero-title">Våra tjänster i Köping och Mälardalen</h1>
           <p className="page-hero-subtitle">
-            Vi erbjuder professionell trädgårdsskötsel, byggnation och fastighetsskötsel för privatpersoner och företag.
+            Vi erbjuder professionell byggnation, fastighetsskötsel och trädgårdsservice för privatpersoner och företag.
           </p>
         </div>
       </header>

@@ -40,12 +40,9 @@ export default function AboutSection() {
             </h2>
 
             <p className="about-text">
-              Vi erbjuder professionella byggtjänster,
-              byggnation, fastighetsskötsel och trädgårdsskötsel i mellersta Sverige.
-            </p>
+              Vi utgår från Köping och hjälper privatpersoner och företag med noggrant utförda arbeten och personlig service.
 
-            <p className="about-text">
-              Vi utgår från Köping och hjälper både privatpersoner och företag att ta hand om sina fastigheter med kvalitet och omsorg.
+              <br /> <br />Vi tar hand om våra kunders fastigheter med kvalitet, omsorg och ett stort fokus på att arbetet ska bli rätt utfört.
             </p>
 
             {/* LIST (SEO + accessibility fix: ul/li instead of divs) */}
@@ -87,6 +84,6 @@ export default function AboutSection() {
 
         </div>
       </div>
-    </section>
+    </section >
   );
 }

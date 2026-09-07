@@ -83,8 +83,7 @@ export default function Contact() {
           <span className="hero-label">KONTAKTA OSS</span>
           <h1 className="page-hero-title">Vi hjälper dig gärna!</h1>
           <p className="page-hero-subtitle">
-            Har du frågor eller vill du ha en offert?<br/>
-            Hör av dig så återkommer vi.
+            Har du frågor eller vill du ha en kostnadsfri offert? Hör av dig så återkommer vi så snart vi kan.
           </p>
         </div>
       </header>
@@ -136,7 +135,7 @@ export default function Contact() {
                 </div>
                 <div className="location-info">
                   <h3>Verksamma i Köping med omnejd</h3>
-                  <p>Vi utgår från Köping och hjälper privatpersoner och företag i närområdet.</p>
+                  <p>Vi utgår från Köping och hjälper privatpersoner och företag med byggnation, fastighetsskötsel och trädgårdsservice i närområdet.</p>
                 </div>
               </div>
 

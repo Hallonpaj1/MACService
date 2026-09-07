@@ -20,7 +20,7 @@ export default function AboutPage() {
     {
       icon: Trophy,
       title: "Erfarenhet",
-      description: "Många års erfarenhet inom fastighets- och trädgårdsservice.",
+      description: "Erfarenhet av byggnation, fastighetsskötsel och trädgårdsservice.",
     },
     {
       icon: Zap,
@@ -49,7 +49,7 @@ export default function AboutPage() {
             animate={{ opacity: 1 }}
             className="page-hero-subtitle"
           >
-            Din lokala partner för professionell fastighets- och trädgårdsservice i Köping med omnejd
+            Din lokala partner för professionell byggnation, fastighetsskötsel och trädgårdsservice i Köping med omnejd
           </motion.p>
         </div>
       </header>
@@ -67,12 +67,12 @@ export default function AboutPage() {
             <span className="story-label">Om oss</span>
 
             <h2 className="story-title">
-              Din lokala partner för trädgård och fastighet i Köping
+              Din lokala partner för byggnation, fastighet och trädgård i Köping
             </h2>
 
             <p className="story-text">
-              Vi erbjuder byggnation, fastighetsskötsel och trädgårdsskötsel i Köping och mellersta Sverige.
-              Vi hjälper både privatpersoner och företag med pålitlig och noggrann service.
+              Vi erbjuder byggnation, fastighetsskötsel och trädgårdsservice i Köping och mellersta Sverige.
+              Vi hjälper både privatpersoner och företag med pålitlig, noggrann och personlig service.
             </p>
 
             <ul className="check-list" aria-label="Vad vi erbjuder">
