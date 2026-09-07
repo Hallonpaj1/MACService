@@ -1,11 +1,13 @@
+import { useState } from 'react'
 import './GoogleReviews.css'
 import manualData from '../../data/google_reviews_manual.json'
 
 export default function GoogleReviews({
   googleSearchUrl = 'https://www.google.com/search?sca_esv=50d2a87678068abc&hl=sv-SE&sxsrf=ANbL-n6IlmqZnorgoqJIhIYmT7YWmomxsA:1781204311226&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOWe1Y8yog-4i7_C7onD_45TUbL3E2qaFMmsg-KUy1tdDOLznZV22jPlYycvzuR9Mq7Hc3Dvd_PPOIwly6GRumqbtxINr&q=MAC+Service+Recensioner&sa=X&ved=2ahUKEwjZtfiR7_-UAxXLIxAIHbN2Ov4Q0bkNegQIIRAF&biw=1912&bih=956&dpr=1'
 }) {
+  const [showAll, setShowAll] = useState(false);
 
-  const reviews = (manualData && manualData.reviews && manualData.reviews.length)
+  const allReviews = (manualData && manualData.reviews && manualData.reviews.length)
     ? manualData.reviews
     : [
         {
@@ -15,6 +17,8 @@ export default function GoogleReviews({
           date: '2025-09-12'
         }
       ]
+
+  const visibleReviews = showAll ? allReviews : allReviews.slice(0, 4);
 
   return (
     <section
@@ -33,8 +37,8 @@ export default function GoogleReviews({
         </p>
 
         {/* REVIEWS LIST */}
-        <div className="reviews-list" role="list">
-          {reviews.map((r, i) => (
+        <div className={`reviews-list ${showAll ? 'is-expanded' : ''}`} role="list">
+          {visibleReviews.map((r, i) => (
             <article
               className="review-card"
               key={i}
@@ -68,15 +72,23 @@ export default function GoogleReviews({
         </div>
 
         {/* CTA (SEO + trust signal) */}
-        <a
-          className="reviews-cta"
-          href={googleSearchUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Öppna fler Google recensioner i ny flik"
-        >
-          Se fler omdömen på Google
-        </a>
+        <div className="reviews-actions">
+          {!showAll && allReviews.length > 4 && (
+            <button className="load-more-btn" onClick={() => setShowAll(true)}>
+              Se mer
+            </button>
+          )}
+
+          <a
+            className="reviews-cta"
+            href={googleSearchUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Öppna fler Google recensioner i ny flik"
+          >
+            Se fler omdömen på Google
+          </a>
+        </div>
 
       </div>
     </section>

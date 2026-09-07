@@ -135,7 +135,8 @@ export default function Contact() {
                 </div>
                 <div className="location-info">
                   <h3>Verksamma i Köping med omnejd</h3>
-                  <p>Vi utgår från Köping och hjälper privatpersoner och företag med byggnation, fastighetsskötsel och trädgårdsservice i närområdet.</p>
+                  <p className="text-desktop">Vi utgår från Köping och hjälper privatpersoner och företag med byggnation, fastighetsskötsel och trädgårdsservice i närområdet.</p>
+                  <p className="text-mobile">Bygg, fastighet och trädgård i Köping med omnejd.</p>
                 </div>
               </div>
 
@@ -230,14 +231,16 @@ export default function Contact() {
       >
         <div className="container">
           <h2 className="section-title">Hitta oss</h2>
-          <div id="contact-map" className="map">
-            <iframe
-              title="Karta över Köping"
-              width="100%"
-              height="100%"
-              loading="lazy"
-              src="https://www.google.com/maps?q=K%C3%B6ping%2C%20Sverige&output=embed"
-            />
+          <div className="map-wrapper">
+            <div id="contact-map" className="map">
+              <iframe
+                title="Karta över Köping"
+                width="100%"
+                height="100%"
+                loading="lazy"
+                src="https://www.google.com/maps?q=K%C3%B6ping%2C%20Sverige&output=embed"
+              />
+            </div>
           </div>
 
         </div>

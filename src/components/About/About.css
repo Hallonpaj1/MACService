@@ -67,6 +67,15 @@
   gap: 14px;
 }
 
+.about-list::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  margin-top: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+}
+
 .about-list-item {
   display: flex;
   align-items: center;

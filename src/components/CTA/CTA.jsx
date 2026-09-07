@@ -19,12 +19,11 @@ export default function CTA() {
       >
 
         <h2 id="cta-title" className="cta-title">
-          Behöver du professionell hjälp med byggnation, fastighetsskötsel eller trädgårdsservice?
+          Behöver du hjälp med ett projekt?
         </h2>
 
         <p className="cta-text">
-          Kontakta MAC Service idag för en kostnadsfri offert.
-          Vi hjälper både privatpersoner och företag med pålitlig och kvalitativ service.
+          Kontakta oss för en kostnadsfri offert. Vi hjälper dig att hitta rätt lösning.
         </p>
 
         <div className="cta-buttons">

@@ -102,6 +102,15 @@
   gap: 14px;
 }
 
+.check-list::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  margin-top: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+}
+
 .check-item {
   display: flex;
   gap: 12px;
@@ -138,7 +147,10 @@
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 24px;
-  margin-top: 4rem;
+  margin-top: 32px;
+  padding: 32px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* VALUE CARD */

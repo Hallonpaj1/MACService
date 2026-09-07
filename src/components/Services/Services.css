@@ -50,6 +50,8 @@ h2.services-title {
   display: flex;
   flex-direction: column;
   border-top: 1px solid rgba(255, 255, 255, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  padding-bottom: 1rem;
 }
 
 /* LIST ITEM */

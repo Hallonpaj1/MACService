@@ -41,9 +41,12 @@
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 2rem;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
   margin-left: -40px;
   margin-right: -40px;
+  padding: 32px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .review-card {
@@ -92,6 +95,31 @@
   color: #6b7280;
 }
 
+.reviews-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.load-more-btn {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 12px 32px;
+  border-radius: var(--radius-sm);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.load-more-btn:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-2px);
+}
+
 .reviews-cta {
   display: inline-block;
   padding: 16px 32px;
@@ -102,13 +130,7 @@
   font-weight: 600;
   transition: all 0.2s ease;
   font-size: 16px;
-  margin-bottom: 0;
-}
-
-@media (min-width: 769px) {
-  .reviews-cta {
-    margin-bottom: 128px;
-  }
+  margin-bottom: 128px;
 }
 
 .reviews-cta:hover {
@@ -152,7 +174,7 @@
   }
 
 
-  a.reviews-cta {
-    margin-bottom: 100px;
+  .reviews-list:not(.is-expanded) .review-card:nth-child(n+4) {
+    display: none;
   }
 }

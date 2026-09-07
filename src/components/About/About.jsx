@@ -41,8 +41,6 @@ export default function AboutSection() {
 
             <p className="about-text">
               Vi utgår från Köping och hjälper privatpersoner och företag med noggrant utförda arbeten och personlig service.
-
-              <br /> <br />Vi tar hand om våra kunders fastigheter med kvalitet, omsorg och ett stort fokus på att arbetet ska bli rätt utfört.
             </p>
 
             {/* LIST (SEO + accessibility fix: ul/li instead of divs) */}

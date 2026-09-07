@@ -49,7 +49,7 @@ export default function AboutPage() {
             animate={{ opacity: 1 }}
             className="page-hero-subtitle"
           >
-            Din lokala partner för professionell byggnation, fastighetsskötsel och trädgårdsservice i Köping med omnejd
+            Ett lokalt företag med fokus på kvalitet, personlig service och noggrant utfört arbete.
           </motion.p>
         </div>
       </header>
@@ -67,12 +67,11 @@ export default function AboutPage() {
             <span className="story-label">Om oss</span>
 
             <h2 className="story-title">
-              Din lokala partner för byggnation, fastighet och trädgård i Köping
+              Personlig service med fokus på kvalitet och noggrannhet
             </h2>
 
             <p className="story-text">
-              Vi erbjuder byggnation, fastighetsskötsel och trädgårdsservice i Köping och mellersta Sverige.
-              Vi hjälper både privatpersoner och företag med pålitlig, noggrann och personlig service.
+              Vi tror på att göra ett bra jobb från början. Genom nära kontakt med våra kunder kan vi förstå behoven och hitta lösningar som fungerar i praktiken. Oavsett om det gäller ett mindre uppdrag eller ett större projekt är målet alltid detsamma – ett noggrant utfört arbete och en nöjd kund.
             </p>
 
             <ul className="check-list" aria-label="Vad vi erbjuder">
