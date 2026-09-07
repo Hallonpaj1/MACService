@@ -13,7 +13,7 @@
   position: relative;
   z-index: 10;
   display: grid;
-  grid-template-columns: 1fr 1.6fr;
+  grid-template-columns: minmax(280px, 0.8fr) minmax(0, 1.7fr);
   gap: 4rem;
   align-items: flex-start;
 }
@@ -22,6 +22,7 @@
   text-align: left;
   position: sticky;
   top: 120px;
+  min-width: 0;
 }
 
 .services-label {
@@ -52,6 +53,7 @@ h2.services-title {
   border-top: 1px solid rgba(255, 255, 255, 0.15);
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
   padding-bottom: 1rem;
+  min-width: 0;
 }
 
 /* LIST ITEM */
@@ -122,7 +124,7 @@ h2.services-title {
 
 @media (max-width: 992px) {
   .services-container {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 4rem;
     padding: 0 2rem 128px;
   }
@@ -158,14 +160,14 @@ h2.services-title {
     margin-right: 0;
     padding-left: 0;
     padding-right: 0;
-    text-align: center;
+    text-align: left;
     width: 100%;
   }
 
   .services-container {
     display: flex;
     flex-direction: column;
-    padding: 0 1.5rem 128px;
+    padding: 0 1.5rem 4rem;
     gap: 1rem;
     margin-top: 0;
     margin-bottom: 0;

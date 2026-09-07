@@ -1,5 +1,5 @@
 .google-reviews {
-  padding: 4rem 2rem;
+  padding: 128px 2rem 0;
   background-color: #356627;
   color: white;
   text-align: center;
@@ -130,7 +130,7 @@
   font-weight: 600;
   transition: all 0.2s ease;
   font-size: 16px;
-  margin-bottom: 128px;
+  margin-bottom: 64px;
 }
 
 .reviews-cta:hover {
@@ -149,12 +149,12 @@
 @media (max-width: 768px) {
 
   .google-reviews {
-    padding: 5rem 0;
+    padding: 4rem 16px 0;
   }
 
   .reviews-title {
     font-size: 12px;
-    margin-top: 128px;
+    margin-top: 64px;
   }
 
   .reviews-subtitle {
@@ -163,7 +163,7 @@
   }
 
   .reviews-list {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 1.5rem;
     margin-left: 0;
     margin-right: 0;

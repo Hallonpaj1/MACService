@@ -116,7 +116,7 @@
 /* RESPONSIVE */
 @media (max-width: 900px) {
   .about-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 50px;
   }
 
@@ -127,6 +127,6 @@
 
 @media (max-width: 768px) {
   .about-section {
-    padding: 128px 24px;
+    padding: 4rem 16px;
   }
 }

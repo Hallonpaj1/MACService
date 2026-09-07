@@ -268,11 +268,11 @@
     padding-right: 2rem;
   }
 
+  .contact-page .section,
   .contact-methods-section,
   .contact-form-section,
   .contact-map-section {
-    padding-left: 0;
-    padding-right: 0;
+    padding: 4rem 16px;
   }
 
   .contact-card {

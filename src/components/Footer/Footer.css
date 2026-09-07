@@ -126,7 +126,7 @@
 /* RESPONSIVE */
 @media (max-width: 900px) {
   .footer-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 40px;
   }
 }
