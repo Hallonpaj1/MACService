@@ -61,7 +61,7 @@ export default function Services() {
 
       {/* HERO */}
       <header className="page-hero">
-        <div className="page-hero-bg" style={{ backgroundImage: `url(${heroImg})` }}></div>
+        <img src={heroImg} alt="" className="page-hero-bg" fetchpriority="high" loading="eager" aria-hidden="true" />
         <div className="page-hero-overlay"></div>
         <div className="page-hero-container">
           <h1 className="page-hero-title">Våra tjänster i Köping och Mälardalen</h1>
