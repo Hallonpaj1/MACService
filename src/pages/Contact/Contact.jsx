@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Send, ChevronRight } from "lucide-react";
-import heroImg from "../../assets/hero-contact.jpg";
+import heroImg from "../../assets/hero-contact.webp";
 import "./Contact.css";
 
 export default function Contact() {
@@ -136,7 +136,7 @@ export default function Contact() {
                 <div className="location-info">
                   <h3>Verksamma i Köping med omnejd</h3>
                   <p className="text-desktop">Vi utgår från Köping och hjälper privatpersoner och företag med byggnation, fastighetsskötsel och trädgårdsservice i närområdet.</p>
-                  <p className="text-mobile">Bygg, fastighet och trädgård i Köping med omnejd.</p>
+                  <p className="text-mobile">Bygg, fastighet och trädgård.</p>
                 </div>
               </div>
 

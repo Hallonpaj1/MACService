@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { CheckCircle2, Users, Trophy, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
-import heroImg from "../../assets/hero-about.jpg";
+import heroImg from "../../assets/hero-about.webp";
 import "./About.css";
 
 export default function AboutPage() {

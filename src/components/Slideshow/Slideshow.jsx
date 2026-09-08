@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import stugaSmall from "../../assets/Stuga-small.jpg"
 import "./Slideshow.css"
 
 export default function Slideshow({
@@ -48,6 +49,9 @@ export default function Slideshow({
     )
   }
 
+  const currentImage = images[index]
+  const isStuga = currentImage && currentImage.includes("Stuga")
+
   return (
     <div
       className="slideshow"
@@ -58,7 +62,9 @@ export default function Slideshow({
       <img
         key={index}
         className="slide-image"
-        src={images[index]}
+        src={currentImage}
+        srcSet={isStuga ? `${stugaSmall} 400w, ${currentImage} 600w` : undefined}
+        sizes={isStuga ? "(max-width: 768px) 400px, 600px" : undefined}
         alt={`Projektbild ${index + 1}`}
         loading="lazy"
         decoding="async"
