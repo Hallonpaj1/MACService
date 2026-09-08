@@ -42,7 +42,7 @@ export default function Navbar() {
           className="navbar-logo"
           aria-label="Gå till startsidan"
         >
-          <img src={logo} alt="MAC Service logotyp" />
+          <img src={logo} alt="MAC Service logotyp" width="73" height="48" />
           <span className="navbar-brand">MAC Service</span>
         </Link>
 

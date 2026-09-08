@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Send, ChevronRight } from "lucide-react";
-import heroImg from "../../assets/hero-contact.webp";
+import heroImg from "../../assets/hero-contact.jpg";
 import "./Contact.css";
 
 export default function Contact() {
