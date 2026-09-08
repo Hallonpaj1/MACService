@@ -73,7 +73,7 @@
 /* LABEL */
 .hero-label {
   display: block;
-  font-family: cursive;
+  font-family: 'Comic Neue', cursive;
   font-size: 28px;
   font-weight: 700;
   letter-spacing: 0.05em;
