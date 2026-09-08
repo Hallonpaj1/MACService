@@ -120,7 +120,7 @@
   transform: translateY(-2px);
 }
 
-.reviews-cta {
+a.reviews-cta {
   display: inline-block;
   padding: 16px 32px;
   background: #fff;
@@ -130,10 +130,10 @@
   font-weight: 600;
   transition: all 0.2s ease;
   font-size: 16px;
-  margin-bottom: 64px;
+  margin-bottom: 128px;
 }
 
-.reviews-cta:hover {
+a.reviews-cta:hover {
   background: #fdfbf7;
   transform: translateY(-2px);
 }
@@ -176,5 +176,9 @@
 
   .reviews-list:not(.is-expanded) .review-card:nth-child(n+4) {
     display: none;
+  }
+
+  a.reviews-cta {
+    margin-bottom: 64px;
   }
 }
