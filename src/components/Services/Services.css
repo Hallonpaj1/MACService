@@ -137,8 +137,10 @@
     padding: 0;
   }
 
+  .services-label,
   .services-title {
     max-width: 700px;
+    text-align: center;
   }
 
   .services-grid {

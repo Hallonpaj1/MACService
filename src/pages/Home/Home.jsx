@@ -11,16 +11,16 @@ export default function Home() {
   return (
     <>
       <Helmet>
-        <title>Byggtjänster, fastighetsskötsel & trädgårdsservice | MAC Service</title>
+        <title>Macköping | Bygg, fastighetsservice & trädgård i Köping</title>
 
         <meta
           name="description"
-          content="Professionell trädgårdsskötsel i Köping. Vi erbjuder gräsklippning, häckklippning och komplett trädgårdsservice för privatpersoner och företag."
+          content="Macköping hjälper privatpersoner och företag med byggnation, renovering, fastighetsservice och trädgårdsservice i Köping med omnejd."
         />
 
         <meta
           name="keywords"
-          content="trädgårdsskötsel köping, trädgårdsservice köping, gräsklippning köping, häckklippning köping"
+          content="byggnation köping, renovering köping, byggservice köping, fastighetsservice köping, fastighetsskötsel köping, trädgårdsservice köping, trädgårdsskötsel köping, macköping"
         />
 
         <meta name="robots" content="index, follow" />

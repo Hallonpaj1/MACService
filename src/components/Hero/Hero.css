@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap');
 
 .hero {
   position: relative;
@@ -23,7 +22,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url('../../assets/hero-bg.jpg');
+  background-image: url('../../assets/hero-bg.webp');
   background-size: cover;
   background-position: center 30%;
   z-index: 1;
@@ -59,7 +58,7 @@
   width: auto;
 
   object-fit: contain;
-  /* NO FILTERS! */
+  animation: heroFadeInScale 0.8s ease-out forwards;
 }
 
 /* CONTENT BOX */
@@ -74,14 +73,14 @@
 /* LABEL */
 .hero-label {
   display: block;
-  font-family: 'Caveat', cursive;
+  font-family: cursive;
   font-size: 28px;
-  /* Adjusted size for Caveat */
   font-weight: 700;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.9);
   margin-bottom: 24px;
+  animation: heroFadeInUp 0.8s ease-out forwards;
 }
 
 /* HEADING */
@@ -91,6 +90,7 @@
   line-height: 1.15;
   color: #ffffff;
   margin-bottom: 24px;
+  animation: heroFadeInUpLarge 1s ease-out forwards;
 }
 
 /* SUBTITLE */
@@ -100,6 +100,8 @@
   margin-bottom: 40px;
   line-height: 1.6;
   max-width: 600px;
+  opacity: 0;
+  animation: heroFadeInUp 1s ease-out 0.2s forwards;
 }
 
 /* BUTTONS */
@@ -128,7 +130,10 @@
 
 .btn-primary:hover {
   background: var(--primary-hover);
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+}
+.btn-primary:active {
+  transform: scale(0.98);
 }
 
 /* SECONDARY */
@@ -150,6 +155,25 @@
 .btn-secondary:hover {
   background: rgba(255, 255, 255, 0.1);
   border-color: #ffffff;
+  transform: translateY(-2px);
+}
+.btn-secondary:active {
+  transform: scale(0.98);
+}
+
+@keyframes heroFadeInScale {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes heroFadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes heroFadeInUpLarge {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @media (max-width: 768px) {
