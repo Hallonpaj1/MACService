@@ -30,7 +30,7 @@
 /* LOGO */
 .navbar-logo {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   gap: 0;
   text-decoration: none;
 }

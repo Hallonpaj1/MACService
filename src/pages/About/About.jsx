@@ -37,7 +37,7 @@ export default function AboutPage() {
         <img src={heroImg} alt="" className="page-hero-bg" fetchpriority="high" loading="eager" aria-hidden="true" />
         <div className="page-hero-overlay"></div>
         <div className="page-hero-container">
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             className="page-hero-title"
