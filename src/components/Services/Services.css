@@ -92,6 +92,7 @@
   border-radius: 50%;
   transition: all 0.3s ease;
   flex-shrink: 0;
+  margin: 0;
 }
 
 .services-section .service-card:hover .service-icon {
@@ -182,6 +183,13 @@
     gap: 0;
   }
 
+  /* LIST ITEM */
+  .services-section .service-card {
+    padding: 20px;
+    align-items: center;
+    gap: 32px;
+  }
+
   .services-label,
   .services-title {
     text-align: center;
@@ -200,9 +208,5 @@
   .services-grid {
     width: 100%;
     margin: 0 auto;
-  }
-
-  .service-icon {
-    margin-top: 0;
   }
 }

@@ -60,10 +60,10 @@ export default function Services() {
         {/* LEFT COLUMN: HEADER */}
         <header className="services-header">
           <span className="services-label">
-            VAD VI HJÄLPER DIG MED
+            VÅRA TJÄNSTER
           </span>
           <h2 className="services-title">
-            Vi erbjuder byggnation, fastighetsskötsel och trädgårdsservice.
+            Tjänster anpassade efter dina behov – från mindre uppdrag till kompletta projekt.
           </h2>
 
         </header>
