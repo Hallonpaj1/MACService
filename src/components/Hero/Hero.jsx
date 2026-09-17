@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react"
 import { useNavigate } from "react-router-dom"
 import logo from "../../assets/logo/LogoTransparentWhite.png"
 import heroBg from "../../assets/hero-bg.webp"
+import heroBgMobile from "../../assets/hero-bg-mobile.webp"
 import "./Hero.css"
 
 export default function Hero({ showStats = false }) {
@@ -13,7 +14,10 @@ export default function Hero({ showStats = false }) {
     <section className="hero" aria-label="Huvudsektion">
 
       {/* BACKGROUND IMAGE & OVERLAY */}
-      <img src={heroBg} alt="" className="hero-bg" fetchpriority="high" loading="eager" decoding="sync" aria-hidden="true" />
+      <picture>
+        <source media="(max-width: 768px)" srcSet={heroBgMobile} />
+        <img src={heroBg} alt="" className="hero-bg" fetchpriority="high" loading="eager" decoding="sync" aria-hidden="true" />
+      </picture>
       <div className="hero-overlay" aria-hidden="true"></div>
 
       <div className="hero-container">
