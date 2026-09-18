@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Send, ChevronRight } from "lucide-react";
+import { Mail, Phone, MapPin, Send, ChevronRight, Search } from "lucide-react";
 import heroImg from "../../assets/hero-contact.jpg";
+import kopingMap from "../../assets/koping_map.webp";
 import "./Contact.css";
 
 export default function Contact() {
@@ -20,7 +21,9 @@ export default function Contact() {
         const el = document.getElementById("contact-map");
         if (el) setTimeout(() => el.scrollIntoView({ behavior: "smooth" }), 150);
       }
-    } catch (e) {}
+    } catch (e) {
+      console.error(e);
+    }
   }, []);
 
   const contactMethods = [
@@ -233,13 +236,27 @@ export default function Contact() {
           <h2 className="section-title">Hitta oss</h2>
           <div className="map-wrapper">
             <div id="contact-map" className="map">
-              <iframe
-                title="Karta över Köping"
-                width="100%"
-                height="100%"
-                loading="lazy"
-                src="https://www.google.com/maps?q=K%C3%B6ping%2C%20Sverige&output=embed"
-              />
+              <div className="map-image-wrapper">
+                <img 
+                  src={kopingMap} 
+                  alt="Karta över Köping, Västmanland." 
+                  className="map-image" 
+                  loading="lazy" 
+                />
+              </div>
+            </div>
+            
+            <div className="map-action-wrapper">
+              <a 
+                href="https://www.google.com/search?q=MAC+Service+K%C3%B6ping#sv=CCYSvAEKEgoDdGJzEgtscmY6ITNzSUFFPQoYCgFxEhNNQUMgU2VydmljZSBLw7ZwaW5nEAEaEHB2LS9nLzExeWQ5dzIxbmwqIgoNL2cvMTF5ZDl3MjFubCIRCgtNQUMgU2VydmljZRACGAMyVAoTTUFDIFNlcnZpY2UgS8O2cGluZ0iSjcSdsb2AgAhaHxAAEAEYABgBGAIiE21hYyBzZXJ2aWNlIGvDtnBpbmd6B0vDtnBpbmeSAQhoYW5keW1hbhgKIL7g3ZwH"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn map-google-btn"
+                aria-label="Sök efter MAC Service Köping på Google"
+              >
+                <Search size={18} aria-hidden="true" />
+                Se på Google
+              </a>
             </div>
           </div>
 

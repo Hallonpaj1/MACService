@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState, useMemo } from "react"
 import "./Slideshow.css"
 
 export default function Slideshow({
@@ -6,21 +6,20 @@ export default function Slideshow({
   ariaLabel = "Bildspel med projektbilder från MAC Service"
 }) {
 
-  let images = []
-
-  try {
-    const modules = import.meta.glob(
-      "/src/assets/bilder/*.{png,jpg,jpeg}",
-      { eager: true }
-    )
-
-    images = Object.values(modules)
-      .map(m => m?.default || m)
-      .sort()
-  } catch (e) {
-    console.error("Slideshow import error:", e)
-    images = []
-  }
+  const images = useMemo(() => {
+    try {
+      const modules = import.meta.glob(
+        "/src/assets/bilder/*.{png,jpg,jpeg}",
+        { eager: true }
+      )
+      return Object.values(modules)
+        .map(m => m?.default || m)
+        .sort()
+    } catch (e) {
+      console.error("Slideshow import error:", e)
+      return []
+    }
+  }, [])
 
   const [index, setIndex] = useState(0)
 

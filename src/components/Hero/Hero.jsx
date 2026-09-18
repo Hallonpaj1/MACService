@@ -6,7 +6,7 @@ import heroBg from "../../assets/hero-bg.webp"
 import heroBgMobile from "../../assets/hero-bg-mobile.webp"
 import "./Hero.css"
 
-export default function Hero({ showStats = false }) {
+export default function Hero() {
 
   const navigate = useNavigate()
 
