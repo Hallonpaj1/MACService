@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Send, ChevronRight, Search } from "lucide-react";
 import heroImg from "../../assets/hero-contact.jpg";
 import kopingMap from "../../assets/koping_map.webp";
+import { Link } from "react-router-dom";
 import "./Contact.css";
 
 export default function Contact() {
@@ -10,10 +11,12 @@ export default function Contact() {
     name: "",
     email: "",
     message: "",
+    privacyConsent: false,
   });
 
   const [submitted, setSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [formError, setFormError] = useState("");
 
   useEffect(() => {
     try {
@@ -44,29 +47,45 @@ export default function Contact() {
   ];
 
   const handleChange = (e) => {
+    const value = e.target.type === "checkbox" ? e.target.checked : e.target.value;
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      [e.target.name]: value,
     });
+    
+    if (e.target.name === "privacyConsent" && value) {
+      setFormError("");
+    }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
+    if (!formData.privacyConsent) {
+      setFormError("Du behöver godkänna informationen om personuppgiftsbehandling innan formuläret kan skickas.");
+      return;
+    }
+    
     setIsLoading(true);
 
     try {
+      const payload = {
+        ...formData,
+        privacyConsent: formData.privacyConsent ? "accepted" : "rejected"
+      };
+
       const res = await fetch("https://formspree.io/f/mlgkdjop", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(payload),
       });
 
       if (res.ok) {
         setSubmitted(true);
-        setFormData({ name: "", email: "", message: "" });
+        setFormData({ name: "", email: "", message: "", privacyConsent: false });
       }
     } catch (err) {
       console.error(err);
@@ -209,6 +228,27 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                 />
+                
+                <div className="privacy-checkbox-wrapper">
+                  <input
+                    type="checkbox"
+                    id="privacyConsent"
+                    name="privacyConsent"
+                    checked={formData.privacyConsent}
+                    onChange={handleChange}
+                    className="privacy-checkbox"
+                    required
+                  />
+                  <label htmlFor="privacyConsent" className="privacy-label">
+                    Jag godkänner att MAC Service behandlar mina personuppgifter för att kunna hantera och besvara min förfrågan. Läs vår <Link to="/integritetspolicy">integritetspolicy</Link>.
+                  </label>
+                </div>
+                
+                {formError && (
+                  <div className="form-error" role="alert">
+                    {formError}
+                  </div>
+                )}
 
                 <button
                   className="btn"

@@ -3,9 +3,10 @@ import { HelmetProvider } from "react-helmet-async";
 
 import Layout from "./layouts/Layout";
 import Home from "./pages/Home/Home";
-import AboutPage from "./pages/About/About";
 import Services from "./pages/Services/Services";
+import About from "./pages/About/About";
 import Contact from "./pages/Contact/Contact";
+import PrivacyPolicy from "./pages/PrivacyPolicy/PrivacyPolicy";
 import NotFound from "./pages/Error/Error";
 
 function App() {
@@ -16,11 +17,13 @@ function App() {
           <Route element={<Layout />}>
             <Route index element={<Home />} />
 
-            <Route path="about" element={<AboutPage />} />
+            <Route path="about" element={<About />} />
 
             <Route path="services" element={<Services />} />
 
             <Route path="contact" element={<Contact />} />
+
+            <Route path="integritetspolicy" element={<PrivacyPolicy />} />
 
             <Route path="*" element={<NotFound />} />
           </Route>

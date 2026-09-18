@@ -284,7 +284,8 @@ a {
 /* Last section before Footer: branch at section bottom edge, leaves pointing UP — clipPath ensures nothing bleeds below branch */
 .section.cta::after,
 .section.about-cta::after,
-.section.contact-map-section::after {
+.section.contact-map-section::after,
+.section.privacy-section::after {
   content: "";
   position: absolute;
   bottom: 0;

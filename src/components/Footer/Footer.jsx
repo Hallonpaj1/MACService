@@ -43,6 +43,7 @@ export default function Footer() {
       links: [
         { label: "Om Oss", to: "/about" },
         { label: "Kontakt", to: "/contact" },
+        { label: "Integritetspolicy", to: "/integritetspolicy" },
       ],
     },
     {
