@@ -65,27 +65,23 @@ export default function PrivacyPolicy() {
                 <li>E-postadress</li>
                 <li>Meddelande (fritext som kan innehålla personuppgifter)</li>
               </ul>
-
               <p>
-                Formuläret loggar även ditt samtycke (privacyConsent: "accepted") när du godkänner villkoren.
+                Formuläret registrerar även att du har bekräftat informationen i samband med att du skickar in formuläret.
               </p>
 
               <h2>Ändamål</h2>
               <p>
-                Dina uppgifter behandlas enbart i syfte att:
+                Dina uppgifter behandlas för att:
               </p>
               <ul>
-                <li>Ta emot och hantera kontaktförfrågningar</li>
-                <li>Kunna svara på dina meddelanden</li>
-                <li>Vid behov kunna följa upp en förfrågan</li>
+                <li>ta emot och hantera kontaktförfrågningar</li>
+                <li>kunna svara på dina meddelanden</li>
+                <li>vid behov kunna följa upp en förfrågan</li>
               </ul>
 
               <h2>Formspree</h2>
               <p>
-                Kontaktformuläret skickas via den externa tjänsten Formspree. Formspree används för att ta emot och hantera formulärinskick på vår webbplats. Läs mer på deras officiella webbplats:{" "}
-                <a href="https://formspree.io/" target="_blank" rel="noopener noreferrer">
-                  https://formspree.io/
-                </a>
+                Kontaktformuläret skickas via den externa tjänsten Formspree. Formspree används för att ta emot och hantera formulärinskick på vår webbplats.
               </p>
 
               <h2>Rättslig grund</h2>
@@ -95,7 +91,7 @@ export default function PrivacyPolicy() {
 
               <h2>Lagring</h2>
               <p>
-                Personuppgifterna sparas så länge det behövs för att hantera och följa upp din kontaktförfrågan och därefter endast så länge det finns ett berättigat behov av att behålla uppgifterna. Uppgifter som inte längre behövs raderas omgående.
+                Personuppgifterna sparas så länge det behövs för att hantera och följa upp din kontaktförfrågan. Uppgifter som inte längre behövs ska raderas.
               </p>
 
               <h2>Den registrerades rättigheter</h2>
@@ -103,25 +99,22 @@ export default function PrivacyPolicy() {
                 Enligt gällande dataskyddslagstiftning har du i regel rätt att:
               </p>
               <ul>
-                <li>Begära tillgång till dina personuppgifter</li>
-                <li>Begära rättelse av felaktiga uppgifter</li>
-                <li>Begära radering när förutsättningarna är uppfyllda</li>
-                <li>Invända mot viss behandling när det är tillämpligt</li>
+                <li>begära tillgång till dina personuppgifter</li>
+                <li>begära rättelse av felaktiga uppgifter</li>
+                <li>begära radering när förutsättningarna är uppfyllda</li>
+                <li>invända mot viss behandling när det är tillämpligt</li>
               </ul>
 
               <h2>Kontakt</h2>
               <p>
-                Om du vill utöva någon av dessa rättigheter eller har frågor om personuppgifter och integritet, vänligen kontakta oss på: <a href="mailto:collinstradgardsservice@outlook.com">collinstradgardsservice@outlook.com</a>.
+                Om du vill utöva någon av dessa rättigheter eller har frågor om personuppgifter och integritet, vänligen kontakta oss på:<br />
+                <a href="mailto:collinstradgardsservice@outlook.com">collinstradgardsservice@outlook.com</a>
               </p>
 
               <h2>Ändringar</h2>
               <p>
                 Denna integritetspolicy kan komma att uppdateras vid behov. Den senaste versionen publiceras alltid på denna sida.
               </p>
-
-              <div className="privacy-meta">
-                Senast uppdaterad: 2026-09-19
-              </div>
             </div>
           </div>
         </div>
