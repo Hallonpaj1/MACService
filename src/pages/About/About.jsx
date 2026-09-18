@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { CheckCircle2, Users, Trophy, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import heroImg from "../../assets/hero-about.jpg";
 import "./About.css";
 
@@ -30,7 +31,12 @@ export default function AboutPage() {
   ];
 
   return (
-    <main className="about-page" aria-label="Om MAC Service">
+    <>
+      <Helmet>
+        <title>Om oss | MAC Service</title>
+        <link rel="canonical" href="https://mackoping.se/about" />
+      </Helmet>
+      <main className="about-page" aria-label="Om MAC Service">
 
       {/* HERO */}
       <header className="page-hero">
@@ -154,5 +160,6 @@ export default function AboutPage() {
       </section>
 
     </main>
+    </>
   );
 }

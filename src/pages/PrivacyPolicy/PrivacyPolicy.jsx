@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 import heroImg from "../../assets/hero-privacy.jpg";
 import "./PrivacyPolicy.css";
 
@@ -9,6 +10,11 @@ export default function PrivacyPolicy() {
   }, []);
 
   return (
+    <>
+      <Helmet>
+        <title>Integritetspolicy | MAC Service</title>
+        <link rel="canonical" href="https://mackoping.se/integritetspolicy" />
+      </Helmet>
     <main className="privacy-page" aria-label="Integritetspolicy">
 
       {/* HERO */}
@@ -120,5 +126,6 @@ export default function PrivacyPolicy() {
         </div>
       </section>
     </main>
+    </>
   );
 }

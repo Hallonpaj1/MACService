@@ -4,6 +4,7 @@ import { Mail, Phone, MapPin, Send, ChevronRight, Search } from "lucide-react";
 import heroImg from "../../assets/hero-contact.jpg";
 import kopingMap from "../../assets/koping_map.webp";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import "./Contact.css";
 
 export default function Contact() {
@@ -95,6 +96,11 @@ export default function Contact() {
   };
 
   return (
+    <>
+      <Helmet>
+        <title>Kontakt | MAC Service</title>
+        <link rel="canonical" href="https://mackoping.se/contact" />
+      </Helmet>
     <main className="contact-page" aria-label="Kontaktsida">
 
       {/* HERO / HEADER */}
@@ -304,5 +310,6 @@ export default function Contact() {
       </section>
 
     </main>
+    </>
   );
 }

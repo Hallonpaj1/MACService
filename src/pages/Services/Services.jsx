@@ -11,6 +11,8 @@ import ServiceCard from "../../components/ServiceCard/ServiceCard";
 import { Link } from "react-router-dom";
 import heroImg from "../../assets/hero-services.jpg";
 
+import { Helmet } from "react-helmet-async";
+
 import "./Services.css";
 
 export default function Services() {
@@ -57,6 +59,11 @@ export default function Services() {
   ];
 
   return (
+    <>
+      <Helmet>
+        <title>Tjänster | MAC Service</title>
+        <link rel="canonical" href="https://mackoping.se/services" />
+      </Helmet>
     <main className="services-page" aria-label="Tjänstesida för MAC Service">
 
       {/* HERO */}
@@ -180,5 +187,6 @@ export default function Services() {
       </section>
 
     </main>
+    </>
   );
 }
